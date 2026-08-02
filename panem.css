@@ -254,7 +254,12 @@ img { max-width: 100%; }
 .panem-pa-news-list a:hover { border-color: var(--panem-red); }
 
 .panem-pa-event-copy { display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 15px; min-height: 145px; align-items: center; padding: 15px; border: 1px solid var(--panem-line); background: var(--panem-1); }
-.panem-pa-event-copy > iconify-icon { width: 58px; height: 58px; color: var(--panem-red); }
+.panem-pa-event-copy > iconify-icon {
+  width: 58px;
+  height: 58px;
+  font-size: 58px;
+  color: var(--panem-red);
+}
 .panem-pa-event-copy strong { color: var(--panem-text); font: 800 15px/1.1 var(--panem-font-title); text-transform: uppercase; }
 .panem-pa-event-copy p { margin: 7px 0; color: var(--panem-muted); font-size: 13px; line-height: 1.4; }
 .panem-pa-event-copy a { display: inline-flex; align-items: center; gap: 6px; color: var(--panem-red); font: 700 13px/1 var(--panem-font-title); text-transform: uppercase; }

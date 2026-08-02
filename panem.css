@@ -521,23 +521,27 @@ img { max-width: 100%; }
 
 /* Panneau des notifications */
 #notiffi_panel {
-  --menuSize: 440px;
+  --menuSize: 300px;
   top: 0;
   left: calc(var(--menuSize) * -1);
   width: var(--menuSize);
   height: 100%;
   gap: 0;
   align-items: stretch;
-  padding: 0 0 0 72px;
+  padding: 0 0 0 0px;
   overflow: hidden;
   border: 0;
   border-right: 1px solid var(--panem-line);
   background: var(--panem-1);
   box-shadow: 18px 0 45px rgba(0, 0, 0, .2);
   color: var(--panem-text);
+  box-sizing: border-box;
 }
 
-#notiffi_panel.open { left: 0; }
+#notiffi_panel.open {
+  left: auto;
+  right: 0;
+}
 
 #notiffi_panel .myprofile {
   position: relative;
@@ -554,11 +558,11 @@ img { max-width: 100%; }
 #notiffi_panel .myprofile::before {
   content: "NOTIFICATIONS";
   position: absolute;
-  top: 13px;
-  right: -8px;
+  top: 14px;
+  right: 22px;
   color: color-mix(in srgb, var(--panem-red) 12%, transparent);
-  font: italic 800 38px/1 var(--panem-font-title);
-  letter-spacing: -2px;
+  font: italic 800 29px/1 var(--panem-font-title);
+  letter-spacing: -1px;
 }
 
 #notiffi_panel .myname,
@@ -579,13 +583,16 @@ img { max-width: 100%; }
 }
 
 #notiffi_panel .all_notifications {
+  display: flex;
   flex: 1 1 auto;
   width: 100%;
   max-height: none;
+  flex-direction: column;
   padding: 14px;
   overflow: auto;
   border-radius: 0;
   background: var(--panem-1);
+  box-sizing: border-box;
 }
 
 #notiffi_panel .notification {
@@ -616,7 +623,17 @@ img { max-width: 100%; }
 #notiffi_panel .notif_close { display: grid; width: 28px; height: 28px; place-items: center; padding: 0; border: 1px solid var(--panem-line); border-radius: 0; color: var(--panem-muted); }
 #notiffi_panel .notification:hover .notif_close { opacity: 1; }
 #notiffi_panel .notif_close:hover { border-color: var(--panem-red); background: var(--panem-red); color: var(--panem-on-accent); }
-#notiffi_panel .no_notification { display: grid; min-height: 180px; place-items: center; border: 1px solid var(--panem-line); color: var(--panem-muted); font-size: 13px; }
+#notiffi_panel .no_notification {
+  display: grid;
+  width: 100%;
+  min-height: 0;
+  flex: 1 1 auto;
+  place-items: center;
+  border: 1px solid var(--panem-line);
+  color: var(--panem-muted);
+  font-size: 13px;
+  box-sizing: border-box;
+}
 
 #notiffi_panel .notiffi_manage {
   display: grid;

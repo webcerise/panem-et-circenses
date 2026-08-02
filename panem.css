@@ -1,0 +1,432 @@
+/* PANEM ET CIRCENSES
+ * Feuille de style personnalisée destinée à être hébergée sur GitHub.
+ * Les styles natifs du thème Blank restent dans styles.css.
+ */
+
+:root {
+  --panem-paper: #f4f7f8;
+  --panem-paper-blue: #e7f1f7;
+  --panem-ink: #08090a;
+  --panem-muted: #66727a;
+  --panem-line: #aab8c1;
+  --panem-wine: #650515;
+  --panem-wine-bright: #970b25;
+  --panem-serif: "Times New Roman", Times, serif;
+  --panem-sans: Arial, Helvetica, sans-serif;
+}
+
+html {
+  background: var(--panem-paper-blue);
+}
+
+body {
+  margin: 0;
+  background:
+    linear-gradient(rgba(255, 255, 255, .68), rgba(255, 255, 255, .68)),
+    repeating-linear-gradient(90deg, transparent 0 47px, rgba(8, 9, 10, .035) 47px 48px),
+    var(--panem-paper-blue);
+  color: var(--panem-ink);
+  font-family: var(--panem-serif);
+  font-size: 14px;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: .16;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.24'/%3E%3C/svg%3E");
+}
+
+.main_forum {
+  width: 1000px;
+  margin: 0 auto;
+  padding: 0 40px 60px;
+  background: rgba(244, 247, 248, .94);
+  border: 0;
+  border-radius: 0;
+  box-shadow: 0 0 70px rgba(23, 40, 50, .15);
+}
+
+#page-body {
+  padding-top: 26px;
+  counter-reset: panem-category;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--panem-wine-bright);
+}
+
+/* Header source 1840 × 684, affiché à 920 × 342 pour le Retina. */
+#page-header {
+  padding-top: 0;
+}
+
+#header {
+  display: block;
+  width: 920px;
+  height: 342px;
+  margin: 0 auto;
+  overflow: hidden;
+  border: 0;
+  border-radius: 0;
+  background: none;
+}
+
+#header img {
+  display: block;
+  width: 920px;
+  height: 342px;
+}
+
+.navbar {
+  min-height: 40px;
+  margin: 0 auto;
+  padding: 0;
+  border: solid var(--panem-ink);
+  border-width: 1px 0;
+  border-radius: 0;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+.navbar a {
+  padding: 13px 17px 11px;
+  border-radius: 0;
+  font-family: var(--panem-sans);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .16em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.navbar a + a::before {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 9px;
+  margin: 0 17px 0 -17px;
+  vertical-align: -1px;
+  background: var(--panem-line);
+}
+
+.nav-logout,
+.nav-register {
+  background: transparent;
+  color: var(--panem-wine);
+}
+
+/* Ouverture éditoriale. */
+.index-edition {
+  display: grid;
+  grid-template-columns: 190px 1fr 180px;
+  min-height: 210px;
+  margin-bottom: 28px;
+  border-bottom: 1px solid var(--panem-ink);
+}
+
+.index-edition__meta {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 4px;
+  padding: 22px 24px 25px 0;
+  border-right: 1px solid var(--panem-line);
+  color: var(--panem-muted);
+  font-family: var(--panem-sans);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.index-edition__lead {
+  align-self: end;
+  padding: 24px 32px 22px;
+}
+
+.index-edition__kicker,
+.cate_kicker,
+.hub_kicker {
+  margin: 0 0 7px;
+  color: var(--panem-wine);
+  font-family: var(--panem-sans);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+}
+
+.index-edition h1 {
+  margin: 0;
+  color: var(--panem-ink);
+  font-family: var(--panem-serif);
+  font-size: 72px;
+  font-weight: 400;
+  letter-spacing: -.055em;
+  line-height: .82;
+  text-align: left;
+  text-transform: none;
+}
+
+.index-edition__copy {
+  max-width: 440px;
+  margin: 17px 0 0;
+  color: var(--panem-muted);
+  font-size: 14px;
+  font-style: italic;
+  line-height: 1.35;
+}
+
+.index-edition__number {
+  display: grid;
+  place-items: end center;
+  padding-bottom: 9px;
+  border-left: 1px solid var(--panem-line);
+  color: var(--panem-wine);
+  font-size: 148px;
+  line-height: .75;
+  letter-spacing: -.09em;
+}
+
+.introduction {
+  margin: 0 0 40px;
+  padding: 24px 0;
+  border: solid var(--panem-line);
+  border-width: 1px 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+/* Catégories. */
+.container {
+  counter-increment: panem-category;
+  margin: 0 0 54px;
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.cate_heading {
+  display: grid;
+  grid-template-columns: 94px 1fr;
+  align-items: end;
+  min-height: 96px;
+  border-bottom: 4px double var(--panem-ink);
+}
+
+.cate_index::before {
+  content: counter(panem-category, decimal-leading-zero);
+}
+
+.cate_index {
+  padding-bottom: 12px;
+  color: var(--panem-wine);
+  font-size: 54px;
+  line-height: .75;
+}
+
+.cate_heading-copy {
+  padding: 0 0 12px 22px;
+  border-left: 1px solid var(--panem-line);
+}
+
+.cate_title {
+  font-family: var(--panem-serif);
+  font-size: 47px;
+  font-weight: 400;
+  letter-spacing: -.035em;
+  line-height: .9;
+}
+
+.forums {
+  counter-reset: panem-forum;
+}
+
+.forum {
+  counter-increment: panem-forum;
+  display: grid;
+  grid-template-columns: 66px 1fr;
+  padding: 24px 0 22px;
+  border-bottom: 1px solid var(--panem-line);
+  border-radius: 0;
+  background: transparent;
+}
+
+.forum_index {
+  grid-row: 1 / span 3;
+  color: var(--panem-muted);
+  font-family: var(--panem-sans);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .1em;
+}
+
+.forum_index::before {
+  content: counter(panem-category, decimal-leading-zero) "." counter(panem-forum, decimal-leading-zero);
+}
+
+.forumtitle {
+  grid-column: 2;
+  margin-bottom: 13px;
+  font-family: var(--panem-serif);
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: -.025em;
+  line-height: 1;
+}
+
+.forum_content,
+.forum_details {
+  grid-column: 2;
+}
+
+.forum_content {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 54px 185px;
+  gap: 18px;
+  align-items: center;
+}
+
+.forum-img {
+  display: none;
+}
+
+.forum_desc {
+  max-height: 72px;
+  overflow: auto;
+  padding-right: 20px;
+  color: var(--panem-muted);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.forum_avatar {
+  width: 54px;
+  height: 54px;
+  filter: grayscale(1) contrast(1.08);
+}
+
+.forum_lastpost {
+  width: auto;
+  font-family: var(--panem-sans);
+  font-size: 9px;
+  line-height: 1.45;
+  text-transform: uppercase;
+}
+
+.lastpost_link {
+  display: block;
+  margin-bottom: 3px;
+  overflow: hidden;
+  font-family: var(--panem-serif);
+  font-size: 14px;
+  font-style: italic;
+  line-height: 1.1;
+  text-overflow: ellipsis;
+  text-transform: none;
+  white-space: nowrap;
+}
+
+.forum_details {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 15px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(170, 184, 193, .55);
+  color: var(--panem-muted);
+  font-family: var(--panem-sans);
+  font-size: 9px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+/* Qui est en ligne. */
+.hub {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr 1fr;
+  grid-template-rows: auto 220px auto;
+  gap: 0;
+  margin: 48px 0 0;
+  padding: 0;
+  border: solid var(--panem-ink);
+  border-width: 4px 0 1px;
+  border-radius: 0;
+  background: transparent;
+}
+
+.hub_heading {
+  grid-column: 1 / -1;
+  padding: 18px 0 14px;
+  border-bottom: 1px solid var(--panem-ink);
+}
+
+.hub_title {
+  margin: 0;
+  font-family: var(--panem-serif);
+  font-size: 38px;
+  font-weight: 400;
+  letter-spacing: -.035em;
+  text-align: left;
+  text-transform: none;
+}
+
+.hub_infos,
+.hub_onlineUsers,
+.hub_lastConnected {
+  height: 220px;
+  border-radius: 0;
+  background: transparent;
+}
+
+.hub_infos,
+.hub_onlineUsers {
+  border-right: 1px solid var(--panem-line);
+}
+
+.hub_lastUser,
+.hub_details,
+.hub_onlineUsers,
+.hub_lastConnected {
+  background: transparent;
+}
+
+.hub_lastUser {
+  border-bottom: 1px solid var(--panem-line);
+}
+
+.hub_groups {
+  grid-column: 1 / -1;
+  padding-top: 12px;
+  border-top: 1px solid var(--panem-ink);
+}
+
+.hub_groups .group {
+  border: 1px solid var(--panem-line);
+  border-radius: 0;
+  background: transparent;
+  font-family: var(--panem-sans);
+  font-size: 9px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.page-actions {
+  border: 0;
+  border-radius: 0;
+  font-family: var(--panem-sans);
+  font-size: 9px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}

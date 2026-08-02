@@ -707,14 +707,19 @@ img { max-width: 100%; }
 .panem-topic-sort .sort-form input[type="submit"] { border-color: var(--panem-red); background: var(--panem-red); color: var(--panem-on-accent); font: 700 13px/1 var(--panem-font-title); text-transform: uppercase; }
 
 .panem-forum-view { overflow: hidden; border: 1px solid var(--panem-line); background: var(--panem-2); box-shadow: var(--panem-shadow); }
-.panem-topic-list-heading { display: flex; height: 54px; align-items: center; justify-content: space-between; padding: 0 18px; border-bottom: 1px solid var(--panem-line); background: var(--panem-text); color: var(--panem-bg); box-sizing: border-box; }
+.panem-topic-list-heading { display: flex; height: 54px; align-items: center; justify-content: space-between; padding: 0 18px; border-bottom: 1px solid var(--panem-line); background: var(--panem-text); color: var(--panem-1); box-sizing: border-box; }
 .panem-topic-list-heading span { font: italic 800 19px/1 var(--panem-font-title); text-transform: uppercase; }
 .panem-topic-list-heading b { font: 700 13px/1 var(--panem-font-title); letter-spacing: .1em; opacity: .65; text-transform: uppercase; }
 
-.panem-topic-row { position: relative; display: grid; min-height: 124px; grid-template-columns: 62px minmax(0, 1fr) 120px 205px 82px; align-items: stretch; gap: 0; margin: 0; padding: 0; overflow: hidden; border: 0; border-bottom: 1px solid var(--panem-line); border-radius: 0; background: var(--panem-1); }
+.panem-topic-row { position: relative; display: grid; min-height: fit-content; grid-template-columns: 62px minmax(0, 1fr) 120px 205px 82px; align-items: stretch; gap: 0; margin: 0; padding: 0; overflow: hidden; border: 0; border-bottom: 1px solid var(--panem-line); border-radius: 0; background: var(--panem-1); }
 .panem-topic-row:last-of-type { border-bottom: 0; }
 .panem-topic-status { display: grid; place-items: center; border-right: 1px solid var(--panem-line); background: var(--panem-2); }
-.panem-topic-status img { width: 26px; height: 26px; object-fit: contain; }
+.panem-topic-status > i { color: var(--panem-muted); font-size: 25px; }
+.panem-topic-row.topic-new .panem-topic-status > i,
+.panem-topic-row.new .panem-topic-status > i,
+.panem-topic-row.folder_new .panem-topic-status > i { color: var(--panem-red); }
+.panem-topic-row.locked .panem-topic-status > i,
+.panem-topic-row.folder_locked .panem-topic-status > i { opacity: .45; }
 .panem-topic-info { position: relative; min-width: 0; padding: 20px 22px; overflow: hidden; }
 .panem-topic-labels { display: flex; min-width: 0; align-items: center; gap: 9px; margin-bottom: 9px; }
 .panem-topic-labels .topic-type { color: var(--panem-red); font: 700 13px/1 var(--panem-font-title); text-transform: uppercase; }
@@ -731,6 +736,7 @@ img { max-width: 100%; }
 .panem-topic-last-label { margin-bottom: 7px; color: var(--panem-red); font: 700 13px/1 var(--panem-font-title); letter-spacing: .08em; text-transform: uppercase; }
 .panem-topic-lastpost > div { overflow: hidden; color: var(--panem-muted); text-overflow: ellipsis; white-space: nowrap; }
 .panem-topic-lastpost > strong { overflow: hidden; color: var(--panem-text); font-size: 13px; text-overflow: ellipsis; white-space: nowrap; }
+.panem-topic-lastpost img { display: none; }
 .panem-topic-avatar { display: grid; place-items: center; overflow: hidden; border-left: 1px solid var(--panem-line); background: var(--panem-2); }
 .panem-topic-avatar img { width: 58px; height: 58px; border: 1px solid var(--panem-line); object-fit: cover; }
 .panem-topic-separator { display: flex; height: 38px; align-items: center; padding: 0 16px; border-bottom: 1px solid var(--panem-line); background: var(--panem-red); color: var(--panem-on-accent); }

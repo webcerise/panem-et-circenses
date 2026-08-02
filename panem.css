@@ -629,13 +629,29 @@ img { max-width: 100%; }
 .panem-post-profile-fields .field_label { width: 100%; color: var(--post-accent); font: 700 13px/1 var(--panem-font-title); text-transform: uppercase; }
 .panem-post-profile-fields .field_content { color: var(--panem-text); font-size: 13px; }
 
-.panem-post-profile .presence { display: none; min-height: 38px; align-items: center; justify-content: center; gap: 7px; padding: 7px 10px; border-right: 1px solid var(--panem-line); border-bottom: 1px solid var(--panem-line); border-left: 1px solid var(--panem-line); background: var(--panem-1); color: var(--post-accent); font: 700 13px/1 var(--panem-font-title); text-transform: uppercase; }
-.panem-post-profile .presence.online { display: flex; }
 .panem-post-identity { padding: 17px 12px; border-right: 1px solid var(--panem-line); border-bottom: 1px solid var(--panem-line); border-left: 1px solid var(--panem-line); background: var(--post-accent); color: var(--panem-on-accent); text-align: center; }
-.panem-post-identity .post_pseudo { display: block; overflow: hidden; color: #fff !important; font: italic 800 21px/1 var(--panem-font-title); paint-order: stroke fill; text-overflow: ellipsis; text-shadow: 0 1px 0 #000; text-transform: uppercase; white-space: nowrap; -webkit-text-stroke: 1px #000; }
+.panem-post-identity .post_pseudo {
+  display: block;
+  overflow: hidden;
+  color: #fff !important;
+  font: italic 800 21px / 1 var(--panem-font-title);
+  paint-order: stroke fill;
+  text-overflow: ellipsis;
+  text-shadow: 1px 1px #000, -1px -1px #000, 1px -1px #000, -1px 1px #000;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
 .panem-post-identity .post_pseudo a,
 .panem-post-identity .post_pseudo strong { color: #fff !important; }
-.panem-post-identity .post_rank { display: block; margin-top: 8px; color: inherit; font: 700 13px/1.2 var(--panem-font-title); letter-spacing: .08em; text-transform: uppercase; }
+.panem-post-identity .post_rank {
+  display: block;
+  margin-top: 8px;
+  color: #000;
+  font: 700 13px / 1.2 var(--panem-font-title);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  text-shadow: 1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+}
 .panem-post-identity .post_rank img { display: block; max-width: 100%; margin: 8px auto 0; }
 
 .panem-post-contact { display: flex; min-height: 48px; align-items: center; justify-content: center; gap: 8px; padding: 8px; border-right: 1px solid var(--panem-line); border-bottom: 1px solid var(--panem-line); border-left: 1px solid var(--panem-line); background: var(--panem-1); }

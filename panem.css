@@ -1,47 +1,31 @@
 /* PANEM ET CIRCENSES
- * Identité visuelle inspirée du header : billet gravé, joaillerie et presse du Capitole.
- * Le socle technique et les variables globales restent dans styles.css.
- */
+   Direction : billet de banque, mode du Capitole, noir d'encre et grenat.
+   Le socle Blank et toutes les variables restent dans styles.css. */
 
-/* ===== PAGE ======================================================= */
+/* 01 — CANEVAS ---------------------------------------------------- */
 
 html {
-  background: var(--panem-paper-blue);
+  background-color: var(--panem-paper-blue);
 }
 
 body {
   margin: 0;
+  color: var(--panem-ink);
   background-color: var(--panem-paper-blue);
   background-image:
-    repeating-linear-gradient(0deg, transparent 0 3px, rgb(8 9 10 / 4%) 3px 4px),
-    repeating-linear-gradient(90deg, transparent 0 5px, rgb(8 9 10 / 3%) 5px 6px);
-  color: var(--panem-ink);
+    linear-gradient(rgb(var(--panem-wash) / 72%), rgb(var(--panem-wash) / 86%)),
+    url("https://i.imgur.com/306YTwZ.jpeg");
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: 100vw auto;
+  background-attachment: fixed;
   font-family: var(--panem-sans);
-  font-size: 13px;
+  font-size: 12px;
 }
-
-body::before,
-body::after {
-  content: "";
-  position: fixed;
-  z-index: -1;
-  top: 0;
-  bottom: 0;
-  width: calc((100vw - 1000px) / 2);
-  min-width: 30px;
-  opacity: .42;
-  background:
-    radial-gradient(ellipse at center, transparent 0 43%, var(--panem-ink) 44% 45%, transparent 46% 53%, var(--panem-ink) 54% 55%, transparent 56%),
-    repeating-linear-gradient(45deg, transparent 0 4px, var(--panem-line) 4px 5px);
-}
-
-body::before { left: 0; }
-body::after { right: 0; transform: scaleX(-1); }
 
 a {
   color: inherit;
   text-decoration: none;
-  transition: color .15s ease;
 }
 
 a:hover {
@@ -53,41 +37,27 @@ a:hover {
   width: 1000px;
   margin: 0 auto;
   padding: 0 40px 70px;
+  overflow: hidden;
   border: solid var(--panem-ink);
   border-width: 0 1px;
   border-radius: 0;
   background-color: var(--panem-paper);
   background-image:
-    linear-gradient(90deg, transparent 39px, rgb(8 9 10 / 7%) 40px, transparent 41px),
-    linear-gradient(90deg, transparent 879px, rgb(8 9 10 / 7%) 880px, transparent 881px);
-  box-shadow: 0 0 45px rgb(19 41 54 / 18%);
+    linear-gradient(90deg, transparent 0 19px, rgb(4 8 11 / 8%) 20px, transparent 21px),
+    linear-gradient(90deg, transparent 0 899px, rgb(4 8 11 / 8%) 900px, transparent 901px);
+  box-shadow: 0 0 60px rgb(16 37 49 / 20%);
 }
 
 #page-body {
-  padding-top: 28px;
-  counter-reset: panem-category;
+  padding-top: 24px;
+  counter-reset: pec-category;
 }
 
-/* ===== HEADER ET NAVIGATION ====================================== */
+/* 02 — HEADER ----------------------------------------------------- */
 
 #page-header {
   position: relative;
-}
-
-#page-header::after {
-  content: "PANEM · ET · CIRCENSES";
-  display: block;
-  width: 920px;
-  box-sizing: border-box;
-  margin: 0 auto;
-  padding: 5px 10px 4px;
-  border: solid var(--panem-ink);
-  border-width: 1px 0;
-  font-family: var(--panem-sans);
-  font-size: 8px;
-  font-weight: 700;
-  letter-spacing: .62em;
-  text-align: center;
+  padding-top: 0;
 }
 
 #header {
@@ -105,117 +75,145 @@ a:hover {
 }
 
 .navbar {
+  position: relative;
   width: 920px;
   box-sizing: border-box;
-  margin: 8px auto 0;
-  padding: 0;
+  margin: 0 auto;
+  padding: 0 26px;
   display: flex;
   justify-content: center;
-  border: 1px solid var(--panem-ink);
+  border: solid var(--panem-ink);
+  border-width: 1px 0;
   border-radius: 0;
-  background: var(--panem-ink);
+  background: var(--panem-paper);
 }
+
+.navbar::before,
+.navbar::after {
+  content: "◆";
+  position: absolute;
+  top: 11px;
+  color: var(--panem-wine);
+  font-size: 8px;
+}
+
+.navbar::before { left: 12px; }
+.navbar::after { right: 12px; }
 
 .navbar a {
   position: relative;
-  padding: 12px 14px 11px;
+  padding: 12px 15px 11px;
   border-radius: 0;
-  color: var(--panem-paper);
   font-family: var(--panem-sans);
   font-size: 8px;
   font-weight: 700;
-  letter-spacing: .14em;
+  letter-spacing: .13em;
   text-transform: uppercase;
 }
 
 .navbar a + a::before {
-  content: "◆";
+  content: "/";
   position: absolute;
-  left: -3px;
-  color: var(--panem-wine-bright);
-  font-size: 6px;
+  left: -2px;
+  color: var(--panem-line);
 }
 
 .navbar a:hover {
-  background: var(--panem-paper);
-  color: var(--panem-wine);
+  background: var(--panem-ink);
+  color: var(--panem-paper);
 }
 
 .nav-logout,
 .nav-register {
   background: transparent;
+  color: var(--panem-wine);
 }
 
-/* ===== UNE / ÉDITION ============================================= */
+/* 03 — UNE -------------------------------------------------------- */
 
-.index-edition {
+.pec-issue {
   position: relative;
   isolation: isolate;
   box-sizing: border-box;
   display: grid;
-  grid-template-columns: 168px 1fr 170px;
-  min-height: 230px;
-  margin-bottom: 44px;
+  grid-template-columns: 190px 1fr 122px;
+  height: 218px;
+  margin: 0 0 48px;
   overflow: hidden;
   border: 1px solid var(--panem-ink);
-  outline: 5px double var(--panem-line);
-  outline-offset: -9px;
-  background:
-    radial-gradient(ellipse at center, transparent 0 57%, rgb(8 9 10 / 10%) 57.5% 58%, transparent 58.5%),
-    repeating-radial-gradient(ellipse at center, transparent 0 9px, rgb(8 9 10 / 5%) 10px 11px),
-    var(--panem-paper-blue);
+  background-color: var(--panem-paper-blue);
+  background-image:
+    linear-gradient(rgb(var(--panem-wash) / 76%), rgb(var(--panem-wash) / 76%)),
+    url("../images/fond.png"),
+    url("https://i.imgur.com/306YTwZ.jpeg");
+  background-position: center;
+  background-size: 920px 342px;
 }
 
-.index-edition::before,
-.index-edition::after {
+.pec-issue::before {
   content: "";
   position: absolute;
   z-index: -1;
-  width: 260px;
-  height: 260px;
-  border: 14px double var(--panem-ink);
+  top: -215px;
+  left: 110px;
+  width: 680px;
+  height: 620px;
+  border: 10px double rgb(4 8 11 / 28%);
   border-radius: 50%;
-  opacity: .18;
+  background: transparent;
 }
 
-.index-edition::before {
-  top: -130px;
-  left: -120px;
-}
-
-.index-edition::after {
-  right: -120px;
-  bottom: -145px;
-}
-
-.index-edition__meta {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  gap: 5px;
-  margin: 16px 0 16px 16px;
-  padding: 18px 17px;
-  border-right: 1px solid var(--panem-ink);
-  font-size: 8px;
+.pec-issue::after {
+  content: "PANEM ET CIRCENSES · PANEM ET CIRCENSES · PANEM ET CIRCENSES";
+  position: absolute;
+  z-index: -1;
+  right: -2px;
+  bottom: 2px;
+  left: -2px;
+  overflow: hidden;
+  color: rgb(4 8 11 / 30%);
+  font-family: var(--panem-sans);
+  font-size: 7px;
   font-weight: 700;
-  letter-spacing: .16em;
-  line-height: 1.5;
+  letter-spacing: .42em;
+  white-space: nowrap;
+}
+
+.pec-issue__seal {
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  margin: 15px 0 15px 15px;
+  border: 5px double var(--panem-ink);
+  border-radius: 50%;
+  background: var(--panem-paper);
+  font-family: var(--panem-serif);
+}
+
+.pec-issue__seal strong {
+  color: var(--panem-wine);
+  font-size: 92px;
+  font-weight: 400;
+  letter-spacing: -.1em;
+  line-height: .72;
+}
+
+.pec-issue__seal span {
+  margin-top: 10px;
+  font-family: var(--panem-sans);
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: .28em;
   text-transform: uppercase;
 }
 
-.index-edition__meta::before {
-  content: "LE JOURNAL DU CAPITOLE";
-  margin-bottom: auto;
-  color: var(--panem-wine);
-}
-
-.index-edition__lead {
+.pec-issue__story {
   align-self: center;
-  padding: 34px 30px;
+  padding: 24px 34px;
   text-align: center;
 }
 
-.index-edition__kicker,
+.pec-eyebrow,
 .cate_kicker,
 .hub_kicker {
   margin: 0 0 8px;
@@ -227,244 +225,261 @@ a:hover {
   text-transform: uppercase;
 }
 
-.index-edition h1 {
+.pec-issue h1 {
   margin: 0;
   color: var(--panem-ink);
   font-family: var(--panem-serif);
-  font-size: 65px;
+  font-size: 62px;
   font-weight: 400;
-  letter-spacing: -.06em;
+  letter-spacing: -.065em;
   line-height: .82;
   text-align: center;
   text-transform: uppercase;
 }
 
-.index-edition__copy {
-  max-width: 420px;
-  margin: 18px auto 0;
+.pec-issue__story > p:last-child {
+  width: 390px;
+  margin: 17px auto 0;
   font-family: var(--panem-serif);
   font-size: 14px;
   font-style: italic;
   line-height: 1.35;
 }
 
-.index-edition__number {
-  align-self: stretch;
-  display: grid;
-  place-items: center;
-  margin: 16px 16px 16px 0;
+.pec-issue__folio {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 15px 15px 15px 0;
+  padding: 14px 12px;
   border-left: 1px solid var(--panem-ink);
+  font-family: var(--panem-sans);
+  text-align: right;
+  text-transform: uppercase;
+}
+
+.pec-issue__folio span {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .22em;
+}
+
+.pec-issue__folio b {
   color: var(--panem-wine);
   font-family: var(--panem-serif);
-  font-size: 116px;
-  letter-spacing: -.1em;
-  line-height: 1;
+  font-size: 37px;
+  font-weight: 400;
 }
 
-.index-gems {
+.pec-issue__folio small {
+  font-size: 7px;
+  letter-spacing: .16em;
+  line-height: 1.6;
+}
+
+.pec-stones {
   position: absolute;
-  inset: 0;
-  z-index: 2;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: auto;
+  z-index: 3;
+  width: 145px;
   pointer-events: none;
+  background-image:
+    url("../images/joyaux.png"),
+    url("https://i.imgur.com/0gI4uHW.png");
+  background-position: right center, right center;
+  background-repeat: no-repeat, no-repeat;
+  background-size: 360px 134px, 360px 134px;
+  opacity: .62;
 }
 
-.index-gems i {
-  position: absolute;
-  display: block;
-  width: 24px;
-  height: 18px;
-  border: 2px solid var(--panem-ink);
-  border-radius: 45% 55% 50% 48%;
-  background:
-    linear-gradient(135deg, #fff 0 8%, transparent 9%),
-    radial-gradient(circle at 70% 70%, #290007, #760015 52%, #070001 72%);
-  box-shadow: 2px 3px 0 rgb(8 9 10 / 22%);
-  transform: rotate(var(--gem-turn, 0deg));
+.pec-stones i {
+  display: none;
 }
 
-.index-gems i:nth-child(1) { --gem-turn: 18deg; top: 23px; left: 214px; }
-.index-gems i:nth-child(2) { --gem-turn: -23deg; top: 42px; right: 220px; width: 31px; height: 23px; }
-.index-gems i:nth-child(3) { --gem-turn: 31deg; bottom: 24px; left: 265px; }
-.index-gems i:nth-child(4) { --gem-turn: -11deg; right: 190px; bottom: 36px; width: 20px; height: 27px; }
-.index-gems i:nth-child(5) { --gem-turn: 45deg; top: 102px; right: 145px; width: 17px; height: 17px; }
+/* 04 — MESSAGE D'ACCUEIL ----------------------------------------- */
 
 .introduction {
   position: relative;
-  margin: 0 0 46px;
-  padding: 28px 34px;
-  border: 1px solid var(--panem-ink);
+  box-sizing: border-box;
+  margin: 0 0 52px;
+  padding: 32px 35px 28px;
+  border: 4px double var(--panem-ink);
   border-radius: 0;
   background: var(--panem-paper);
-  font-size: 12px;
-  line-height: 1.7;
   column-count: 2;
-  column-gap: 42px;
+  column-gap: 48px;
   column-rule: 1px solid var(--panem-line);
+  font-family: var(--panem-sans);
+  font-size: 11px;
+  line-height: 1.65;
+  text-align: justify;
 }
 
 .introduction::before {
-  content: "COMMUNIQUÉ";
+  content: "LE CAPITOLE COMMUNIQUE";
   position: absolute;
-  top: -10px;
-  left: 32px;
-  padding: 3px 9px;
+  top: -11px;
+  left: 50%;
+  padding: 4px 13px;
+  transform: translateX(-50%);
   background: var(--panem-ink);
   color: var(--panem-paper);
-  font-size: 8px;
+  font-size: 7px;
   font-weight: 700;
-  letter-spacing: .2em;
+  letter-spacing: .24em;
+  white-space: nowrap;
 }
 
-/* ===== CATÉGORIES ================================================= */
+/* 05 — CATÉGORIES ------------------------------------------------- */
 
 .container {
   position: relative;
-  counter-increment: panem-category;
-  margin: 0 0 58px;
-  padding: 14px;
+  counter-increment: pec-category;
+  box-sizing: border-box;
+  margin: 0 0 68px;
+  padding: 20px 16px 16px;
   border: 1px solid var(--panem-ink);
   border-radius: 0;
-  background:
-    repeating-linear-gradient(45deg, transparent 0 3px, rgb(8 9 10 / 5%) 3px 4px),
-    var(--panem-paper-blue);
+  background-color: var(--panem-paper-blue);
+  background-image:
+    linear-gradient(rgb(var(--panem-wash) / 83%), rgb(var(--panem-wash) / 83%)),
+    url("../images/fond.png"),
+    url("https://i.imgur.com/306YTwZ.jpeg");
+  background-position: center;
+  background-size: 920px 342px;
 }
 
 .container::before,
 .container::after {
-  content: "◆";
+  content: "";
   position: absolute;
-  top: 29px;
-  color: var(--panem-wine);
-  font-size: 15px;
+  top: 8px;
+  bottom: 8px;
+  width: 9px;
+  border: solid var(--panem-ink);
+  border-width: 1px 0;
 }
 
-.container::before { left: 30px; }
-.container::after { right: 30px; }
+.container::before { left: 5px; }
+.container::after { right: 5px; }
 
 .cate_heading {
+  position: relative;
+  z-index: 2;
   display: grid;
-  grid-template-columns: 90px 1fr 90px;
+  grid-template-columns: 82px 1fr 82px;
   align-items: center;
-  min-height: 92px;
-  margin-bottom: 14px;
-  border: 4px double var(--panem-ink);
+  min-height: 88px;
+  margin: -41px 42px 19px;
+  border: 5px double var(--panem-ink);
   background: var(--panem-paper);
+  box-shadow: 7px 7px 0 var(--panem-wine);
   text-align: center;
 }
 
 .cate_heading::after {
-  content: counter(panem-category, upper-roman);
-  color: var(--panem-muted);
+  content: counter(pec-category, upper-roman);
+  color: var(--panem-wine);
   font-family: var(--panem-serif);
-  font-size: 28px;
+  font-size: 29px;
 }
 
 .cate_index {
   color: var(--panem-wine);
   font-family: var(--panem-serif);
-  font-size: 48px;
+  font-size: 45px;
 }
 
 .cate_index::before {
-  content: counter(panem-category, decimal-leading-zero);
+  content: counter(pec-category, decimal-leading-zero);
 }
 
 .cate_heading-copy {
-  padding: 12px 20px;
+  padding: 11px 18px;
   border: solid var(--panem-line);
   border-width: 0 1px;
 }
 
 .cate_title {
   font-family: var(--panem-serif);
-  font-size: 42px;
+  font-size: 40px;
   font-weight: 400;
-  letter-spacing: -.035em;
+  letter-spacing: -.045em;
   line-height: .9;
   text-transform: uppercase;
 }
 
 .forums {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px;
-  counter-reset: panem-forum;
+  counter-reset: pec-forum;
+  border: 1px solid var(--panem-ink);
+  background: var(--panem-paper);
 }
 
 .forum {
   position: relative;
-  counter-increment: panem-forum;
-  box-sizing: border-box;
+  counter-increment: pec-forum;
   display: grid;
+  grid-template-columns: 78px 1fr 205px;
   grid-template-rows: auto 1fr auto;
-  min-height: 238px;
-  overflow: hidden;
-  border: 1px solid var(--panem-ink);
+  min-height: 132px;
+  padding: 0;
+  border: 0;
+  border-bottom: 1px solid var(--panem-ink);
   border-radius: 0;
   background: var(--panem-paper);
 }
 
-.forum::before,
+.forum:last-child {
+  border-bottom: 0;
+}
+
 .forum::after {
   content: "";
   position: absolute;
-  width: 38px;
-  height: 38px;
+  top: 0;
+  right: 205px;
+  bottom: 25px;
+  width: 1px;
+  background: var(--panem-ink);
   pointer-events: none;
-  border-color: var(--panem-wine);
 }
 
-.forum::before {
-  top: 6px;
-  left: 6px;
-  border-top: 1px solid;
-  border-left: 1px solid;
-}
-
-.forum::after {
-  right: 6px;
-  bottom: 6px;
-  border-right: 1px solid;
-  border-bottom: 1px solid;
+.forum:nth-child(even) {
+  background: color-mix(in srgb, var(--panem-paper-blue) 52%, var(--panem-paper));
 }
 
 .forum_index {
-  position: absolute;
-  z-index: 2;
-  top: 13px;
-  right: 14px;
+  grid-row: 1 / -1;
+  display: grid;
+  place-items: center;
+  border-right: 1px solid var(--panem-ink);
   color: var(--panem-wine);
-  font-family: var(--panem-sans);
-  font-size: 8px;
-  font-weight: 700;
-  letter-spacing: .1em;
+  font-family: var(--panem-serif);
+  font-size: 28px;
 }
 
 .forum_index::before {
-  content: counter(panem-category, decimal-leading-zero) "/" counter(panem-forum, decimal-leading-zero);
+  content: counter(pec-category) "." counter(pec-forum, decimal-leading-zero);
 }
 
 .forumtitle {
-  display: block;
-  box-sizing: border-box;
-  width: calc(100% - 56px);
-  margin: 0;
-  padding: 20px 22px 12px;
+  grid-column: 2;
+  grid-row: 1;
+  align-self: end;
+  padding: 20px 24px 5px;
   font-family: var(--panem-serif);
-  font-size: 28px;
+  font-size: 30px;
   font-weight: 400;
-  letter-spacing: -.025em;
+  letter-spacing: -.035em;
   line-height: .95;
   text-transform: uppercase;
 }
 
 .forum_content {
-  display: grid;
-  grid-template-columns: 1fr 58px;
-  grid-template-rows: 1fr auto;
-  gap: 14px;
-  align-items: end;
-  padding: 6px 22px 15px;
+  display: contents;
 }
 
 .forum-img {
@@ -472,40 +487,63 @@ a:hover {
 }
 
 .forum_desc {
+  grid-column: 2;
+  grid-row: 2;
   align-self: start;
-  max-height: 67px;
+  max-height: 47px;
   overflow: auto;
-  padding: 0 15px 0 0;
+  padding: 5px 35px 18px 24px;
   color: var(--panem-muted);
   font-family: var(--panem-sans);
-  font-size: 11px;
-  line-height: 1.45;
+  font-size: 10px;
+  line-height: 1.5;
   text-align: justify;
 }
 
 .forum_avatar {
-  width: 58px;
-  height: 72px;
-  border: 1px solid var(--panem-ink);
+  position: static;
+  z-index: 2;
+  grid-column: 3;
+  grid-row: 1;
+  align-self: end;
+  justify-self: center;
+  width: 60px;
+  height: 76px;
+  margin-top: 12px;
+  border: 4px double var(--panem-ink);
+  background: var(--panem-paper-blue);
   filter: grayscale(1) contrast(1.18);
 }
 
-.forum_lastpost {
-  grid-column: 1 / -1;
-  box-sizing: border-box;
+.forum_avatar img {
+  display: block;
   width: 100%;
-  padding-top: 11px;
-  border-top: 1px solid var(--panem-line);
+  height: 100%;
+  object-fit: cover;
+}
+
+.forum_lastpost {
+  grid-column: 3;
+  grid-row: 2;
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: auto;
+  padding: 8px 16px 14px;
+  border-left: 1px solid var(--panem-ink);
   font-family: var(--panem-sans);
-  font-size: 8px;
+  font-size: 7px;
   letter-spacing: .04em;
-  line-height: 1.45;
+  line-height: 1.55;
+  text-align: center;
   text-transform: uppercase;
 }
 
 .lastpost_link {
-  display: inline-block;
-  max-width: 270px;
+  display: block;
+  width: 170px;
+  margin-bottom: 5px;
   overflow: hidden;
   color: var(--panem-wine);
   font-family: var(--panem-serif);
@@ -515,27 +553,27 @@ a:hover {
   line-height: 1.1;
   text-overflow: ellipsis;
   text-transform: none;
-  vertical-align: bottom;
   white-space: nowrap;
 }
 
 .forum_details {
+  grid-column: 2 / -1;
+  grid-row: 3;
   display: flex;
   justify-content: space-between;
-  gap: 12px;
-  padding: 9px 22px;
-  border-top: 1px solid var(--panem-ink);
+  gap: 20px;
+  padding: 7px 13px 6px 24px;
+  border-top: 1px solid var(--panem-line);
   background: var(--panem-ink);
   color: var(--panem-paper);
   font-family: var(--panem-sans);
   font-size: 7px;
   font-weight: 700;
-  letter-spacing: .08em;
+  letter-spacing: .09em;
   text-transform: uppercase;
 }
 
 .forum_sub {
-  max-width: 260px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -546,18 +584,18 @@ a:hover {
   text-decoration: underline;
 }
 
-/* ===== ACTIONS ==================================================== */
+/* 06 — ACTIONS ---------------------------------------------------- */
 
 .page-actions {
-  margin: 22px 0;
-  padding: 10px 0;
+  margin: 20px 0 24px;
+  padding: 9px 11px;
   border: solid var(--panem-ink);
   border-width: 1px 0;
   border-radius: 0;
   font-family: var(--panem-sans);
-  font-size: 8px;
+  font-size: 7px;
   font-weight: 700;
-  letter-spacing: .09em;
+  letter-spacing: .1em;
   text-transform: uppercase;
 }
 
@@ -578,37 +616,43 @@ textarea {
   background: var(--panem-paper-blue);
 }
 
-/* ===== REGISTRE / QUI EST EN LIGNE =============================== */
+/* 07 — REGISTRE --------------------------------------------------- */
 
 .hub {
   display: grid;
-  grid-template-columns: 1.15fr 1fr 1fr;
-  grid-template-rows: auto 220px auto;
+  grid-template-columns: 1.1fr 1fr 1fr;
+  grid-template-rows: auto 218px auto;
   gap: 0;
-  margin: 52px 0 0;
-  padding: 14px;
+  margin: 55px 0 0;
+  padding: 19px;
   border: 1px solid var(--panem-ink);
   border-radius: 0;
-  background:
-    repeating-linear-gradient(-45deg, transparent 0 3px, rgb(8 9 10 / 5%) 3px 4px),
-    var(--panem-paper-blue);
+  background-color: var(--panem-paper-blue);
+  background-image:
+    linear-gradient(rgb(var(--panem-wash) / 83%), rgb(var(--panem-wash) / 83%)),
+    url("../images/fond.png"),
+    url("https://i.imgur.com/306YTwZ.jpeg");
+  background-position: center;
+  background-size: 920px 342px;
 }
 
 .hub_heading {
   grid-column: 1 / -1;
-  padding: 18px 20px 16px;
-  border: 4px double var(--panem-ink);
+  margin: -40px 55px 17px;
+  padding: 15px 20px 13px;
+  border: 5px double var(--panem-ink);
   background: var(--panem-paper);
+  box-shadow: 6px 6px 0 var(--panem-wine);
   text-align: center;
 }
 
 .hub_title {
   margin: 0;
   font-family: var(--panem-serif);
-  font-size: 43px;
+  font-size: 42px;
   font-weight: 400;
-  letter-spacing: -.04em;
-  line-height: .9;
+  letter-spacing: -.045em;
+  line-height: .85;
   text-align: center;
   text-transform: uppercase;
 }
@@ -617,8 +661,7 @@ textarea {
 .hub_onlineUsers,
 .hub_lastConnected {
   box-sizing: border-box;
-  height: 220px;
-  margin-top: 14px;
+  height: 218px;
   border-radius: 0;
   background: var(--panem-paper);
 }
@@ -641,6 +684,7 @@ textarea {
 
 .hub_lastUser img,
 .user-avatar {
+  border: 1px solid var(--panem-ink);
   filter: grayscale(1) contrast(1.15);
 }
 
@@ -659,9 +703,9 @@ textarea {
   background: var(--panem-ink);
   color: var(--panem-paper);
   font-family: var(--panem-sans);
-  font-size: 8px;
+  font-size: 7px;
   font-weight: 700;
-  letter-spacing: .1em;
+  letter-spacing: .11em;
   text-transform: uppercase;
 }
 
@@ -669,7 +713,7 @@ textarea {
   border-right: 0;
 }
 
-/* ===== BARRE LATÉRALE ============================================ */
+/* 08 — OUTILS LATÉRAUX ------------------------------------------- */
 
 .sidebar {
   border-right: 1px solid var(--panem-ink);

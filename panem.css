@@ -585,24 +585,15 @@ img { max-width: 100%; }
 .panem-post-layout { display: grid; grid-template-columns: 240px minmax(0, 1fr); align-items: stretch; }
 .panem-post-main.post_message { grid-column: 2; min-width: 0; padding: 0; border: 0; border-left: 1px solid var(--panem-line); border-radius: 0; background: var(--panem-1); }
 
-.panem-post-facts { display: grid; grid-template-columns: 64px repeat(4, minmax(120px, 1fr)); min-height: 78px; gap: 8px; padding: 10px; border-bottom: 1px solid var(--panem-line); background: var(--panem-2); }
-.panem-post-facts .panem-profile-field { display: none; min-width: 0; align-items: center; gap: 8px; padding: 9px 10px; border: 1px solid var(--panem-line); background: var(--panem-1); }
-.panem-post-facts .field-icone,
-.panem-post-facts .field-pronoms,
-.panem-post-facts .field-age,
-.panem-post-facts .field-origine,
-.panem-post-facts .field-occupation { display: flex; }
-.panem-post-facts .field-icone { align-items: center; justify-content: center; padding: 5px; overflow: hidden; box-shadow: inset 0 -4px var(--post-accent); }
-.panem-post-facts .field-icone { order: 1; }
-.panem-post-facts .field-pronoms { order: 2; }
-.panem-post-facts .field-age { order: 3; }
-.panem-post-facts .field-origine { order: 4; }
-.panem-post-facts .field-occupation { order: 5; }
-.panem-post-facts .field-icone .field_label { display: none; }
+.panem-post-facts { display: grid; grid-template-columns: 64px minmax(0, 1fr); min-height: 78px; gap: 8px; padding: 10px; border-bottom: 1px solid var(--panem-line); background: var(--panem-2); }
+.panem-post-facts .panem-profile-field { display: none; min-width: 0; border: 1px solid var(--panem-line); background: var(--panem-1); }
+.panem-post-facts .field-icone { grid-column: 1; display: grid; place-items: center; padding: 5px; overflow: hidden; box-shadow: inset 0 -4px var(--post-accent); }
+.panem-post-facts .field-icone .field_label,
+.panem-post-facts .field-citation .field_label { display: none; }
 .panem-post-facts .field-icone .field_content { display: grid; width: 52px; height: 52px; place-items: center; overflow: hidden; }
 .panem-post-facts .field-icone .field_content img { width: 100%; height: 100%; object-fit: cover; }
-.panem-post-facts .field_label { flex: none; color: var(--post-accent); font: 700 13px/1 var(--panem-font-title); text-transform: uppercase; }
-.panem-post-facts .field_content { min-width: 0; overflow: hidden; color: var(--panem-muted); font-size: 13px; text-overflow: ellipsis; white-space: nowrap; }
+.panem-post-facts .field-citation { grid-column: 2; display: flex; align-items: center; padding: 10px 14px; overflow: auto; }
+.panem-post-facts .field-citation .field_content { display: block; max-height: 52px; overflow: auto; color: var(--panem-muted); font: italic 600 13px/1.45 var(--panem-font-text); }
 
 .panem-post-content.content { min-height: 460px; padding: 34px; color: var(--panem-text); font: 500 14px/1.7 var(--panem-font-text); }
 .panem-post-content.content > div { max-width: 100%; }
@@ -616,18 +607,7 @@ img { max-width: 100%; }
 .panem-post-profile-card { position: sticky; top: 20px; width: 200px; margin: 0 auto; }
 .panem-post-profile-visual { position: relative; width: 200px; height: 320px; overflow: hidden; border: 1px solid var(--panem-line); background: var(--panem-1); }
 .panem-post-avatar { width: 100%; height: 100%; overflow: hidden; }
-.panem-post-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: center; transition: .35s ease; }
-.panem-post-profile-fields { position: absolute; inset: 0; z-index: 2; display: flex; flex-direction: column; gap: 7px; padding: 13px; overflow: auto; background: color-mix(in srgb, var(--panem-1) 94%, transparent); opacity: 0; transition: opacity .3s ease; }
-.panem-post-profile-visual:hover .panem-post-profile-fields { opacity: 1; }
-.panem-post-profile-visual:hover .panem-post-avatar img { filter: grayscale(1) blur(2px); transform: scale(1.06); }
-.panem-post-profile-fields .panem-profile-field { display: flex; flex-wrap: wrap; gap: 5px 8px; padding: 8px; border: 1px solid var(--panem-line); background: var(--panem-2); font-size: 13px; }
-.panem-post-profile-fields .field-icone,
-.panem-post-profile-fields .field-pronoms,
-.panem-post-profile-fields .field-age,
-.panem-post-profile-fields .field-origine,
-.panem-post-profile-fields .field-occupation { display: none; }
-.panem-post-profile-fields .field_label { width: 100%; color: var(--post-accent); font: 700 13px/1 var(--panem-font-title); text-transform: uppercase; }
-.panem-post-profile-fields .field_content { color: var(--panem-text); font-size: 13px; }
+.panem-post-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
 
 .panem-post-identity { padding: 17px 12px; border-right: 1px solid var(--panem-line); border-bottom: 1px solid var(--panem-line); border-left: 1px solid var(--panem-line); background: var(--post-accent); color: var(--panem-on-accent); text-align: center; }
 .panem-post-identity .post_pseudo {
@@ -653,6 +633,30 @@ img { max-width: 100%; }
   text-shadow: 1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
 }
 .panem-post-identity .post_rank img { display: block; max-width: 100%; margin: 8px auto 0; }
+
+.panem-profile-tabs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-right: 1px solid var(--panem-line); border-bottom: 1px solid var(--panem-line); border-left: 1px solid var(--panem-line); background: var(--panem-1); }
+.panem-profile-tabs button { min-width: 0; height: 43px; padding: 0 4px; overflow: hidden; border: 0; border-left: 1px solid var(--panem-line); border-radius: 0; background: transparent; color: var(--panem-muted); cursor: pointer; font: 700 13px/1 var(--panem-font-title); text-overflow: ellipsis; text-transform: uppercase; white-space: nowrap; }
+.panem-profile-tabs button:first-child { border-left: 0; }
+.panem-profile-tabs button.active,
+.panem-profile-tabs button:hover { background: var(--post-accent); color: var(--panem-on-accent); }
+
+.panem-profile-panels { height: 210px; border-right: 1px solid var(--panem-line); border-bottom: 1px solid var(--panem-line); border-left: 1px solid var(--panem-line); background: var(--panem-1); }
+.panem-profile-panel { display: none; height: 100%; padding: 10px; overflow: auto; }
+.panem-profile-panel.active { display: block; }
+.panem-profile-panel .panem-profile-field { display: none; margin-bottom: 8px; padding: 9px; border: 1px solid var(--panem-line); background: var(--panem-2); }
+.panem-profile-panel[data-profile-panel="identity"] .field-pronoms,
+.panem-profile-panel[data-profile-panel="identity"] .field-age,
+.panem-profile-panel[data-profile-panel="identity"] .field-origine,
+.panem-profile-panel[data-profile-panel="identity"] .field-occupation,
+.panem-profile-panel[data-profile-panel="character"] .field-allegeance,
+.panem-profile-panel[data-profile-panel="character"] .field-statut-civil,
+.panem-profile-panel[data-profile-panel="character"] .field-edition-remportee,
+.panem-profile-panel[data-profile-panel="player"] .field-faceclaim,
+.panem-profile-panel[data-profile-panel="player"] .field-credits,
+.panem-profile-panel[data-profile-panel="player"] .field-messages,
+.panem-profile-panel[data-profile-panel="player"] .field-date-d-inscription { display: block; }
+.panem-profile-panel .field_label { display: block; margin-bottom: 7px; color: var(--post-accent); font: 700 13px/1 var(--panem-font-title); text-transform: uppercase; }
+.panem-profile-panel .field_content { display: block; max-width: 100%; overflow-wrap: anywhere; color: var(--panem-text); font-size: 13px; line-height: 1.45; white-space: normal; }
 
 .panem-post-contact { display: flex; min-height: 48px; align-items: center; justify-content: center; gap: 8px; padding: 8px; border-right: 1px solid var(--panem-line); border-bottom: 1px solid var(--panem-line); border-left: 1px solid var(--panem-line); background: var(--panem-1); }
 .panem-post-contact a { display: grid; width: 32px; height: 32px; place-items: center; border: 1px solid var(--panem-line); background: var(--panem-2); color: var(--post-accent); overflow: hidden; }

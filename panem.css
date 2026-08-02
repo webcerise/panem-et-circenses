@@ -713,7 +713,7 @@ img { max-width: 100%; }
 .panem-member-name { position: relative; display: block; margin-top: 9px; overflow-wrap: anywhere; font: italic 800 23px/1 var(--panem-font-title); text-transform: uppercase; }
 .panem-member-name > span { color: var(--panem-text) !important; }
 .panem-member-data { display: grid; gap: 6px; margin: 17px 0 0; }
-.panem-member-data > div { display: grid; grid-template-columns: 133px minmax(0, 1fr); gap: 8px; }
+.panem-member-data > div { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 8px; }
 .panem-member-data dt { color: var(--panem-muted); font: 700 13px/1.35 var(--panem-font-title); text-transform: uppercase; }
 .panem-member-data dd { min-width: 0; margin: 0; overflow: hidden; color: var(--panem-text); font-size: 13px; line-height: 1.35; text-overflow: ellipsis; white-space: nowrap; }
 .panem-member-contact { display: flex; align-items: center; gap: 7px; margin-top: auto; }

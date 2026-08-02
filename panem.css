@@ -372,17 +372,16 @@ img { max-width: 100%; }
 .panem-lastpost-meta { display: block; margin-top: 5px; color: var(--panem-muted); font-size: 13px; }
 .panem-forum-avatar { position: absolute; right: -12px; bottom: 20px; z-index: 3; width: 73px; height: 73px; padding: 7px; overflow: hidden; border: 1px solid var(--panem-line); background: var(--panem-red); transform: rotate(45deg); }
 .panem-forum-avatar img {
-  width: 100%;
-  height: 100%;
+  width: 73px;
+  height: 73px;
   object-fit: cover;
-  transform: rotate(-45deg) scale(1.7);
   filter: grayscale(1) contrast(1.12);
   position: absolute;
 }
 
 .panem-forum-footer { grid-column: 1; grid-row: 3; display: flex; min-width: 0; align-items: center; justify-content: space-between; gap: 10px; padding: 6px 14px 6px 59px; border-top: 1px solid var(--panem-line); background: var(--panem-2); }
-.panem-forum-links { min-width: 0; overflow: hidden; font: 700 13px/1.3 var(--panem-font-title); text-overflow: ellipsis; text-transform: uppercase; white-space: nowrap; }
-.panem-forum-links a { display: inline-block; margin-right: 5px; padding-bottom: 2px; border-bottom: 1px solid var(--panem-line); }
+.panem-forum-links { min-width: 0; overflow: hidden; font: 700 13px/1.3 var(--panem-font-title); text-overflow: ellipsis; text-transform: uppercase; white-space: nowrap; font-size: 0px; }
+.panem-forum-links a { display: inline-block; margin-right: 5px; padding-bottom: 2px; border-bottom: 1px solid var(--panem-line); font-size: 13px; }
 .panem-forum-counts { display: flex; flex: none; gap: 4px; }
 .panem-forum-counts span { padding: 4px 6px; border: 1px solid var(--panem-line); background: var(--panem-1); color: var(--panem-muted); font: 700 13px/1 var(--panem-font-title); text-transform: uppercase; }
 .panem-forum-counts b { margin-right: 3px; color: var(--panem-red); font-size: 13px; }

@@ -429,9 +429,9 @@ img { max-width: 100%; }
 .panem-groups { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--panem-line); background: var(--panem-1); }
 .panem-groups .group { position: relative; display: flex; min-height: 46px; align-items: center; gap: 8px; padding: 8px 12px; overflow: hidden; border-right: 1px solid var(--panem-line); font: 700 13px/1 var(--panem-font-title); text-transform: uppercase; }
 .panem-groups .group:last-child { border-right: 0; }
-.panem-groups .pentade { --group: #B38A42; }
-.panem-groups .capitole { --group: #B83F57; }
-.panem-groups .vainqueurs { --group: #3E8792; }
+.panem-groups .pentade { --group: #6F5142; }
+.panem-groups .capitole { --group: #71805E; }
+.panem-groups .vainqueurs { --group: #6B6B86; }
 .panem-groups iconify-icon {
   width: 19px;
   height: 19px;
@@ -606,7 +606,7 @@ img { max-width: 100%; }
 
 .panem-post-profile.post_profile { grid-column: 1; grid-row: 1; min-width: 0; padding: 20px; border: 0; background: var(--panem-2); }
 .panem-post-profile-card { position: sticky; top: 20px; width: 100%; margin: 0 auto; }
-.panem-post-profile-visual { position: relative; display: grid; width: 100%; height: 342px; place-items: center; padding: 9px; overflow: hidden; border: 1px solid var(--panem-line); background: var(--panem-1); }
+.panem-post-profile-visual { position: relative; display: grid; width: 100%; height: 362px; place-items: center; padding: 9px; overflow: hidden; border: 1px solid var(--panem-line); background: var(--panem-1); }
 .panem-post-avatar { width: 202px; height: 322px; overflow: hidden; border: 1px solid var(--panem-line); }
 .panem-post-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
 

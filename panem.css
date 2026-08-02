@@ -423,3 +423,251 @@ a:hover {
   letter-spacing: .08em;
   text-transform: uppercase;
 }
+
+/* ==================================================================
+   06. TRAITEMENT BRUTALISTE
+   ================================================================== */
+
+body {
+  background-color: var(--panem-paper-blue);
+  background-image:
+    linear-gradient(var(--panem-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--panem-line) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+body::before {
+  display: none;
+}
+
+.main_forum {
+  box-sizing: border-box;
+  width: 1000px;
+  padding: 0 38px 60px;
+  border: solid var(--panem-ink);
+  border-width: 0 3px 3px;
+  background: var(--panem-paper);
+  box-shadow: 14px 14px 0 var(--panem-ink);
+}
+
+#header {
+  box-sizing: content-box;
+  border: 3px solid var(--panem-ink);
+  border-top: 0;
+}
+
+.navbar {
+  min-height: 44px;
+  border-width: 3px 0;
+}
+
+.navbar a {
+  padding: 16px 17px 14px;
+}
+
+.navbar a:hover,
+.navbar a:focus-visible {
+  background: var(--panem-ink);
+  color: var(--panem-paper);
+}
+
+.navbar a + a::before {
+  width: 2px;
+  height: 12px;
+  background: var(--panem-ink);
+}
+
+.index-edition {
+  min-height: 240px;
+  margin-top: 14px;
+  border: 3px solid var(--panem-ink);
+}
+
+.index-edition__meta {
+  padding: 18px;
+  border-right: 3px solid var(--panem-ink);
+  color: var(--panem-ink);
+  justify-content: space-between;
+}
+
+.index-edition__meta::before {
+  content: "ARCHIVES / ÉTAT";
+  display: block;
+  padding: 7px;
+  background: var(--panem-ink);
+  color: var(--panem-paper);
+}
+
+.index-edition__lead {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.index-edition h1 {
+  font-size: 79px;
+  line-height: .76;
+}
+
+.index-edition__number {
+  padding: 0 13px 10px 0;
+  border-left: 3px solid var(--panem-ink);
+  background: var(--panem-wine);
+  color: #fff;
+  place-items: end;
+}
+
+.index-edition__kicker,
+.cate_kicker,
+.hub_kicker {
+  width: max-content;
+  padding: 4px 7px;
+  background: var(--panem-ink);
+  color: var(--panem-paper);
+}
+
+.introduction {
+  padding: 28px;
+  border: 3px solid var(--panem-ink);
+}
+
+.container {
+  border: 3px solid var(--panem-ink);
+}
+
+.cate_heading {
+  min-height: 110px;
+  border-bottom: 3px solid var(--panem-ink);
+}
+
+.cate_index {
+  align-self: stretch;
+  display: grid;
+  place-items: end center;
+  padding: 0 0 12px;
+  background: var(--panem-ink);
+  color: var(--panem-paper);
+}
+
+.cate_heading-copy {
+  border-left: 0;
+  padding: 20px 24px 16px;
+}
+
+.cate_title {
+  font-size: 52px;
+  text-transform: uppercase;
+}
+
+.forum {
+  grid-template-columns: 66px 1fr;
+  padding: 0;
+  border-bottom: 3px solid var(--panem-ink);
+}
+
+.forum:last-child {
+  border-bottom: 0;
+}
+
+.forum_index {
+  box-sizing: border-box;
+  align-self: stretch;
+  padding: 22px 9px;
+  border-right: 3px solid var(--panem-ink);
+  background: var(--panem-paper-blue);
+  color: var(--panem-ink);
+  writing-mode: vertical-rl;
+}
+
+.forumtitle {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 20px 22px 12px;
+  border-bottom: 1px solid var(--panem-ink);
+  font-size: 34px;
+  text-transform: uppercase;
+}
+
+.forum_content {
+  box-sizing: border-box;
+  padding: 18px 22px;
+}
+
+.forum_avatar {
+  border: 2px solid var(--panem-ink);
+}
+
+.forum_lastpost {
+  padding-left: 15px;
+  border-left: 2px solid var(--panem-ink);
+}
+
+.forum_details {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 10px 22px;
+  border-top: 1px solid var(--panem-ink);
+  background: var(--panem-ink);
+  color: var(--panem-paper);
+}
+
+.forum_sub a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.hub {
+  border: 3px solid var(--panem-ink);
+}
+
+.hub_heading {
+  padding: 18px 20px 15px;
+  border-bottom: 3px solid var(--panem-ink);
+}
+
+.hub_title {
+  font-size: 48px;
+  text-transform: uppercase;
+}
+
+.hub_infos,
+.hub_onlineUsers {
+  border-right: 3px solid var(--panem-ink);
+}
+
+.hub_lastUser,
+.hub_groups {
+  border-color: var(--panem-ink);
+}
+
+.hub_groups {
+  gap: 0;
+  padding: 0;
+  border-top-width: 3px;
+}
+
+.hub_groups .group {
+  border: 0;
+  border-right: 2px solid var(--panem-ink);
+  padding: 13px 16px;
+}
+
+.hub_groups .group:last-child {
+  border-right: 0;
+}
+
+.button,
+button,
+input,
+select,
+textarea {
+  border-radius: 0;
+}
+
+.page-actions {
+  margin: 18px 0;
+  padding: 10px 0;
+  border: solid var(--panem-ink);
+  border-width: 1px 0;
+}

@@ -370,7 +370,7 @@ img { max-width: 100%; }
 .panem-lastpost-label { display: block; margin-bottom: 7px; color: var(--panem-blue); font: 700 13px/1 var(--panem-font-title); letter-spacing: .1em; }
 .panem-lastpost-topic { display: block; max-width: 150px; overflow: hidden; color: var(--panem-text); font: 700 13px/1.2 var(--panem-font-title); text-overflow: ellipsis; white-space: nowrap; }
 .panem-lastpost-meta { display: block; margin-top: 5px; color: var(--panem-muted); font-size: 13px; }
-.panem-forum-avatar { position: absolute; right: -12px; bottom: 20px; z-index: 3; width: 73px; height: 73px; padding: 7px; overflow: hidden; border: 1px solid var(--panem-line); background: var(--panem-red); transform: rotate(45deg); }
+.panem-forum-avatar { position: absolute; right: -12px; bottom: 20px; z-index: 3; width: 73px; height: 73px; overflow: hidden; border: 1px solid var(--panem-line); background: var(--panem-red); transform: rotate(45deg); }
 .panem-forum-avatar img {
   width: 73px;
   height: 73px;

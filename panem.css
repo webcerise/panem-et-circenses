@@ -617,10 +617,8 @@ img { max-width: 100%; }
   color: #fff !important;
   font: italic 800 21px / 1 var(--panem-font-title);
   paint-order: stroke fill;
-  text-overflow: ellipsis;
   text-shadow: 1px 1px #000, -1px -1px #000, 1px -1px #000, -1px 1px #000;
   text-transform: uppercase;
-  white-space: nowrap;
 }
 .panem-post-identity .post_pseudo a,
 .panem-post-identity .post_pseudo strong { color: #fff !important; }
@@ -652,9 +650,9 @@ img { max-width: 100%; }
 .panem-profile-panel[data-profile-panel="identity"] .field-age,
 .panem-profile-panel[data-profile-panel="identity"] .field-origine,
 .panem-profile-panel[data-profile-panel="identity"] .field-occupation,
-.panem-profile-panel[data-profile-panel="character"] .field-allegeance,
-.panem-profile-panel[data-profile-panel="character"] .field-statut-civil,
-.panem-profile-panel[data-profile-panel="character"] .field-edition-remportee,
+.panem-profile-panel[data-profile-panel="identity"] .field-allegeance,
+.panem-profile-panel[data-profile-panel="identity"] .field-statut-civil,
+.panem-profile-panel[data-profile-panel="identity"] .field-edition-remportee,
 .panem-profile-panel[data-profile-panel="player"] .field-faceclaim,
 .panem-profile-panel[data-profile-panel="player"] .field-credits,
 .panem-profile-panel[data-profile-panel="player"] .field-messages,

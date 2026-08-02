@@ -667,7 +667,63 @@ img { max-width: 100%; }
 
 #page-footer { padding: 18px; color: var(--panem-muted); font-size: 13px; text-align: center; }
 
-/* 07. LISTE DES MEMBRES -------------------------------------------- */
+/* 07. PROFIL D'UN MEMBRE ------------------------------------------- */
+
+.panem-profile-view {
+  --profile-accent: var(--panem-red);
+  display: grid;
+  width: 780px;
+  height: 438px;
+  grid-template-columns: 238px minmax(0, 1fr);
+  margin: 28px auto;
+  overflow: hidden;
+  border: 1px solid var(--panem-line);
+  background: var(--panem-1);
+  box-shadow: var(--panem-shadow);
+  box-sizing: border-box;
+}
+
+.panem-profile-view-aside { display: grid; min-width: 0; height: 436px; grid-template-rows: 322px 58px 56px; border-right: 1px solid var(--panem-line); background: var(--panem-2); }
+.panem-profile-view-avatar { display: grid; place-items: center; overflow: hidden; border-bottom: 1px solid var(--panem-line); background: var(--panem-1); }
+.panem-profile-view-avatar img { display: block; width: 202px; height: 322px; border-right: 1px solid var(--panem-line); border-left: 1px solid var(--panem-line); object-fit: cover; box-sizing: border-box; }
+.panem-profile-view-rank { display: flex; min-width: 0; flex-direction: column; justify-content: center; padding: 9px 17px; overflow: hidden; border-bottom: 1px solid var(--panem-line); background: var(--profile-accent); box-sizing: border-box; }
+.panem-profile-view-rank > span { color: var(--panem-on-accent); font: 700 13px/1 var(--panem-font-title); letter-spacing: .1em; opacity: .75; text-transform: uppercase; }
+.panem-profile-view-rank > strong { margin-top: 5px; overflow: hidden; color: var(--panem-on-accent); font: italic 800 16px/1 var(--panem-font-title); text-overflow: ellipsis; text-transform: uppercase; white-space: nowrap; }
+
+.panem-profile-view-contact { display: flex; min-width: 0; align-items: center; justify-content: center; gap: 7px; margin: 0; padding: 9px; overflow: hidden; }
+.panem-profile-view-contact > div { display: contents; }
+.panem-profile-view-contact a { display: grid; min-width: 34px; height: 34px; place-items: center; padding: 0 9px; border: 1px solid var(--panem-line); background: var(--panem-1); color: var(--profile-accent); font: 700 13px/1 var(--panem-font-title); text-transform: uppercase; box-sizing: border-box; }
+.panem-profile-view-contact a:hover { border-color: var(--profile-accent); background: var(--profile-accent); color: var(--panem-on-accent); }
+.panem-profile-view-contact img { max-width: 18px; max-height: 18px; object-fit: contain; }
+
+.panem-profile-view-main { display: grid; min-width: 0; height: 436px; grid-template-rows: 104px minmax(0, 1fr) 54px; }
+.panem-profile-view-header { position: relative; display: flex; min-width: 0; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 24px; overflow: hidden; border-bottom: 1px solid var(--panem-line); background: var(--panem-2); box-sizing: border-box; }
+.panem-profile-view-header > div:first-child { position: relative; z-index: 1; min-width: 0; }
+.panem-profile-view-header > div:first-child > span { color: var(--profile-accent); font: 700 13px/1 var(--panem-font-title); letter-spacing: .12em; text-transform: uppercase; }
+.panem-profile-view-name { margin: 9px 0 0; overflow: hidden; color: var(--panem-text); font: italic 800 28px/.95 var(--panem-font-title); letter-spacing: -1px; text-align: left; text-overflow: ellipsis; text-transform: uppercase; white-space: nowrap; }
+.panem-profile-view-name > span { color: var(--panem-text) !important; }
+.panem-profile-view-status { position: relative; z-index: 1; flex: none; color: var(--profile-accent); font: 700 13px/1 var(--panem-font-title); text-transform: uppercase; }
+.panem-profile-view-number { position: absolute; right: 15px; bottom: -13px; color: color-mix(in srgb, var(--profile-accent) 11%, transparent); font: italic 800 72px/.8 var(--panem-font-title); letter-spacing: -5px; }
+
+.panem-profile-view-fields { display: grid; min-height: 0; grid-template-columns: repeat(2, minmax(0, 1fr)); align-content: start; gap: 8px; padding: 12px; overflow: auto; background: var(--panem-1); box-sizing: border-box; }
+.panem-profile-view-field { position: relative; min-width: 0; margin: 0; padding: 10px 11px; border: 1px solid var(--panem-line); background: var(--panem-2); box-sizing: border-box; }
+.panem-profile-view-field label { display: block; margin-bottom: 7px; color: var(--profile-accent); font: 700 13px/1 var(--panem-font-title); text-transform: uppercase; }
+.panem-profile-view-field field { display: block; min-width: 0; color: var(--panem-text); font-size: 13px; line-height: 1.45; overflow-wrap: anywhere; }
+.panem-profile-view-postlinks { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 8px; }
+.panem-profile-view-postlinks a { padding: 4px 6px; border: 1px solid var(--panem-line); color: var(--profile-accent); font: 700 13px/1 var(--panem-font-title); text-transform: uppercase; }
+.panem-profile-view-fields .submit-buttons { grid-column: 1 / -1; margin: 0; padding: 0; border: 0; }
+
+.panem-profile-view-actions { display: flex; min-width: 0; align-items: center; gap: 8px; padding: 8px 12px; overflow: hidden; border-top: 1px solid var(--panem-line); background: var(--panem-2); box-sizing: border-box; }
+.panem-profile-view-actions button,
+.panem-profile-view-actions a { display: inline-flex; min-height: 34px; align-items: center; gap: 7px; padding: 0 10px; border: 1px solid var(--panem-line); border-radius: 0; background: var(--panem-1); color: var(--profile-accent); font: 700 13px/1 var(--panem-font-title); text-transform: uppercase; box-sizing: border-box; }
+.panem-profile-view-actions button:hover,
+.panem-profile-view-actions a:hover { border-color: var(--profile-accent); background: var(--profile-accent); color: var(--panem-on-accent); }
+.panem-profile-view-admin { display: flex; min-width: 0; align-items: center; gap: 8px; }
+.panem-profile-view .ajax-profil_edit { position: absolute; top: 7px; right: 7px; cursor: pointer; }
+.panem-profile-view .ajax-profil_edit img,
+.panem-profile-view .ajax-profil_valid { width: 16px; height: 16px; object-fit: contain; }
+
+/* 08. LISTE DES MEMBRES -------------------------------------------- */
 
 .panem-memberlist-hero {
   position: relative;
@@ -722,7 +778,7 @@ img { max-width: 100%; }
 .panem-member-contact img { max-width: 18px; max-height: 18px; object-fit: contain; }
 .panem-member-pagination { display: flex; justify-content: center; margin: 24px 0 0; }
 
-/* 08. SUJETS ET MESSAGES ------------------------------------------- */
+/* 09. SUJETS ET MESSAGES ------------------------------------------- */
 
 .panem-topic-hero {
   position: relative;

@@ -3,18 +3,6 @@
  * Les styles natifs du thème Blank restent dans styles.css.
  */
 
-:root {
-  --panem-paper: #f4f7f8;
-  --panem-paper-blue: #e7f1f7;
-  --panem-ink: #08090a;
-  --panem-muted: #66727a;
-  --panem-line: #aab8c1;
-  --panem-wine: #650515;
-  --panem-wine-bright: #970b25;
-  --panem-serif: "Times New Roman", Times, serif;
-  --panem-sans: Arial, Helvetica, sans-serif;
-}
-
 html {
   background: var(--panem-paper-blue);
 }
@@ -22,11 +10,11 @@ html {
 body {
   margin: 0;
   background:
-    linear-gradient(rgba(255, 255, 255, .68), rgba(255, 255, 255, .68)),
+    linear-gradient(color-mix(in srgb, var(--panem-paper) 68%, transparent), color-mix(in srgb, var(--panem-paper) 68%, transparent)),
     repeating-linear-gradient(90deg, transparent 0 47px, rgba(8, 9, 10, .035) 47px 48px),
     var(--panem-paper-blue);
   color: var(--panem-ink);
-  font-family: var(--panem-serif);
+  font-family: var(--panem-sans);
   font-size: 14px;
 }
 
@@ -44,7 +32,7 @@ body::before {
   width: 1000px;
   margin: 0 auto;
   padding: 0 40px 60px;
-  background: rgba(244, 247, 248, .94);
+  background: color-mix(in srgb, var(--panem-paper) 94%, transparent);
   border: 0;
   border-radius: 0;
   box-shadow: 0 0 70px rgba(23, 40, 50, .15);
@@ -77,13 +65,14 @@ a:hover {
   overflow: hidden;
   border: 0;
   border-radius: 0;
-  background: none;
+  background-image: var(--header);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 920px 342px;
 }
 
 #header img {
-  display: block;
-  width: 920px;
-  height: 342px;
+  display: none;
 }
 
 .navbar {
@@ -183,6 +172,7 @@ a:hover {
   max-width: 440px;
   margin: 17px 0 0;
   color: var(--panem-muted);
+  font-family: var(--panem-sans);
   font-size: 14px;
   font-style: italic;
   line-height: 1.35;
@@ -206,6 +196,8 @@ a:hover {
   border-width: 1px 0;
   border-radius: 0;
   background: transparent;
+  font-family: var(--panem-sans);
+  line-height: 1.6;
 }
 
 /* Catégories. */
@@ -307,6 +299,7 @@ a:hover {
   overflow: auto;
   padding-right: 20px;
   color: var(--panem-muted);
+  font-family: var(--panem-sans);
   font-size: 13px;
   line-height: 1.45;
 }

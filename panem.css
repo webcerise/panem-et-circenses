@@ -518,6 +518,133 @@ img { max-width: 100%; }
 .sidebar .button .icon { display: grid; width: 100%; height: 100%; place-items: center; }
 .sidebar .button:hover,
 .sidebar .theme-toggle:hover { background: var(--panem-red); color: var(--panem-on-accent); }
+
+/* Panneau des notifications */
+#notiffi_panel {
+  --menuSize: 440px;
+  top: 0;
+  left: calc(var(--menuSize) * -1);
+  width: var(--menuSize);
+  height: 100%;
+  gap: 0;
+  align-items: stretch;
+  padding: 0 0 0 72px;
+  overflow: hidden;
+  border: 0;
+  border-right: 1px solid var(--panem-line);
+  background: var(--panem-1);
+  box-shadow: 18px 0 45px rgba(0, 0, 0, .2);
+  color: var(--panem-text);
+}
+
+#notiffi_panel.open { left: 0; }
+
+#notiffi_panel .myprofile {
+  position: relative;
+  display: flex;
+  min-height: 112px;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 24px 26px 20px;
+  overflow: hidden;
+  border-bottom: 1px solid var(--panem-line);
+  background: var(--panem-2);
+}
+
+#notiffi_panel .myprofile::before {
+  content: "NOTIFICATIONS";
+  position: absolute;
+  top: 13px;
+  right: -8px;
+  color: color-mix(in srgb, var(--panem-red) 12%, transparent);
+  font: italic 800 38px/1 var(--panem-font-title);
+  letter-spacing: -2px;
+}
+
+#notiffi_panel .myname,
+#notiffi_panel .myname a {
+  position: relative;
+  color: var(--panem-text) !important;
+  font: italic 800 22px/1 var(--panem-font-title);
+  text-transform: uppercase;
+}
+
+#notiffi_panel .myprofile-edit {
+  position: relative;
+  width: max-content;
+  margin-top: 9px;
+  color: var(--panem-red);
+  font: 700 13px/1 var(--panem-font-title);
+  text-transform: uppercase;
+}
+
+#notiffi_panel .all_notifications {
+  flex: 1 1 auto;
+  width: 100%;
+  max-height: none;
+  padding: 14px;
+  overflow: auto;
+  border-radius: 0;
+  background: var(--panem-1);
+}
+
+#notiffi_panel .notification {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr) 28px;
+  gap: 12px;
+  align-items: start;
+  margin: 0 0 8px;
+  padding: 13px;
+  border: 1px solid var(--panem-line);
+  border-radius: 0;
+  background: var(--panem-2);
+  color: var(--panem-text);
+}
+
+#notiffi_panel .notification.unread {
+  border-left: 4px solid var(--panem-red);
+  background: var(--panem-2);
+}
+
+#notiffi_panel .notification:hover { border-color: var(--panem-red); }
+#notiffi_panel .notif_avatar { --size: 42px; --round: 0; border: 1px solid var(--panem-line); background: var(--panem-1); }
+#notiffi_panel .notif_icon { right: -4px; bottom: -4px; width: 18px; border: 1px solid var(--panem-line); border-radius: 0; background: var(--panem-1); box-shadow: none; color: var(--panem-red); }
+#notiffi_panel .notification.unread .notif_icon { background: var(--panem-red); color: var(--panem-on-accent); }
+#notiffi_panel .notif_text { font-size: 13px; line-height: 1.5; }
+#notiffi_panel .notif_text a { color: var(--panem-text); font-weight: 700; }
+#notiffi_panel .notif_time { margin-top: 7px; color: var(--panem-muted); font: 700 13px/1 var(--panem-font-title); text-transform: uppercase; }
+#notiffi_panel .notif_close { display: grid; width: 28px; height: 28px; place-items: center; padding: 0; border: 1px solid var(--panem-line); border-radius: 0; color: var(--panem-muted); }
+#notiffi_panel .notification:hover .notif_close { opacity: 1; }
+#notiffi_panel .notif_close:hover { border-color: var(--panem-red); background: var(--panem-red); color: var(--panem-on-accent); }
+#notiffi_panel .no_notification { display: grid; min-height: 180px; place-items: center; border: 1px solid var(--panem-line); color: var(--panem-muted); font-size: 13px; }
+
+#notiffi_panel .notiffi_manage {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  padding: 16px;
+  border-top: 1px solid var(--panem-line);
+  background: var(--panem-2);
+}
+
+#notiffi_panel .notiffi_see_all { color: var(--panem-red); font: 700 13px/1 var(--panem-font-title); text-transform: uppercase; }
+#notiffi_panel .notiffi_actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+#notiffi_panel .notiffi_actions .button { min-height: 38px; padding: 8px 10px; border: 1px solid var(--panem-line); border-radius: 0; background: var(--panem-1); color: var(--panem-text); font: 700 13px/1 var(--panem-font-title); text-transform: uppercase; }
+#notiffi_panel .notiffi_actions .button.primary,
+#notiffi_panel .notiffi_actions .button:hover { border-color: var(--panem-red); background: var(--panem-red); color: var(--panem-on-accent); }
+
+.notification.alert {
+  border: 1px solid var(--panem-line);
+  border-left: 4px solid var(--panem-red);
+  border-radius: 0;
+  background: var(--panem-1);
+  box-shadow: var(--panem-shadow);
+  color: var(--panem-text);
+  font-size: 13px;
+}
+
+.notification.alert .alert_close { border: 1px solid var(--panem-line); border-radius: 0; background: var(--panem-2); color: var(--panem-red); }
 .panel, .block { border-radius: 0; }
 .u-img-cover img, .u-img-square img { width: 100%; height: 100%; object-fit: cover; }
 

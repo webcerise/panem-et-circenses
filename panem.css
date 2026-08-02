@@ -18,8 +18,7 @@ a { color: inherit; text-decoration: none; transition: .2s ease; }
 a:hover { color: var(--panem-red); }
 button, input, select, textarea { font-family: var(--panem-font-text); }
 img { max-width: 100%; }
-.panem-game-icon { display: block; width: 1em; height: 1em; object-fit: contain; }
-.panem-game-icon--light { filter: none; }
+.panem-game-icon { display: block; width: 1em; height: 1em; color: currentColor; }
 
 ::-webkit-scrollbar { width: 7px; height: 7px; }
 ::-webkit-scrollbar-track { background: var(--panem-2); }
@@ -91,7 +90,7 @@ img { max-width: 100%; }
   text-transform: uppercase;
 }
 
-#header:hover .pec-header-action { border-color: var(--panem-coral); background: var(--panem-red); }
+#header:hover .pec-header-action { border-color: var(--panem-red); background: var(--panem-red); color: var(--panem-on-accent); }
 
 .navbar {
   position: static;
@@ -114,7 +113,7 @@ img { max-width: 100%; }
   overflow: hidden;
   border-right: 1px solid var(--panem-line);
   background: var(--panem-red);
-  color: #fff;
+  color: var(--panem-on-accent);
 }
 
 .pec-nav-user::after {
@@ -136,8 +135,8 @@ img { max-width: 100%; }
   height: 38px;
   padding: 3px;
   overflow: hidden;
-  border: 1px solid rgb(255 255 255 / 40%);
-  background: rgb(255 255 255 / 16%);
+  border: 1px solid color-mix(in srgb, var(--panem-on-accent) 40%, transparent);
+  background: color-mix(in srgb, var(--panem-on-accent) 16%, transparent);
 }
 
 .pec-nav-avatar img { width: 100%; height: 100%; object-fit: cover; }
@@ -171,7 +170,7 @@ img { max-width: 100%; }
 .pec-nav-links a:nth-child(3n) i { color: var(--panem-red); }
 .pec-nav-links a:hover { background: var(--panem-2); color: var(--panem-text); }
 .pec-nav-links a:hover i { transform: translateY(-2px); }
-.unread-mp:not(:empty) { position: absolute; top: 5px; right: 5px; min-width: 17px; padding: 3px; background: var(--panem-red); color: #fff; font: 700 7px/1 var(--panem-font-text); font-style: normal; text-align: center; }
+.unread-mp:not(:empty) { position: absolute; top: 5px; right: 5px; min-width: 17px; padding: 3px; background: var(--panem-red); color: var(--panem-on-accent); font: 700 7px/1 var(--panem-font-text); font-style: normal; text-align: center; }
 
 /* 03. DASHBOARD ----------------------------------------------------- */
 
@@ -203,11 +202,11 @@ img { max-width: 100%; }
   justify-content: center;
   overflow: hidden;
   background: var(--panem-red);
-  color: #fff;
+  color: var(--panem-on-accent);
   clip-path: polygon(0 0, calc(100% - 22px) 0, 100% 22px, 100% 100%, 0 100%);
 }
 
-.panem-board-cover::after { content: ""; position: absolute; right: -47px; bottom: -47px; width: 125px; height: 125px; border: 23px solid rgb(255 255 255 / 13%); transform: rotate(45deg); }
+.panem-board-cover-icon { position: absolute; right: -25px; bottom: -25px; width: 118px; height: 118px; color: rgb(255 255 255 / 13%); transform: rotate(-12deg); }
 .panem-board-cover span, .panem-board-cover small { font: 700 8px/1 var(--panem-font-title); letter-spacing: .13em; text-transform: uppercase; }
 .panem-board-cover strong { margin: 7px 0; font: italic 800 59px/.8 var(--panem-font-title); letter-spacing: -5px; }
 
@@ -217,7 +216,7 @@ img { max-width: 100%; }
 .panem-board-news-copy h1 { position: relative; z-index: 1; margin: 11px 0 8px; color: var(--panem-text); font: italic 800 31px/.95 var(--panem-font-title); letter-spacing: -1.5px; text-transform: uppercase; }
 .panem-board-news-copy p { position: relative; z-index: 1; max-width: 450px; margin: 0; color: var(--panem-muted); font-size: 11px; }
 .panem-board-news-copy a { position: relative; z-index: 1; display: inline-flex; align-items: center; gap: 8px; margin-top: 15px; padding: 8px 10px; border: 1px solid var(--panem-line); background: var(--panem-2); font: 700 8px/1 var(--panem-font-title); text-transform: uppercase; }
-.panem-board-news-copy a:hover { background: var(--panem-red); color: #fff; }
+.panem-board-news-copy a:hover { background: var(--panem-red); color: var(--panem-on-accent); }
 
 .panem-board-emblem { display: none; }
 
@@ -234,7 +233,7 @@ img { max-width: 100%; }
 .panem-agenda-date { display: grid; flex: 0 0 68px; height: 90px; place-items: center; align-content: center; border-left: 4px solid var(--panem-blue); background: var(--panem-2); }
 .panem-agenda-date b { color: var(--panem-blue); font: 800 31px/1 var(--panem-font-title); }
 .panem-agenda-date span { font: 700 8px/1 var(--panem-font-title); text-transform: uppercase; }
-.panem-staff-avatar { display: grid; flex: 0 0 72px; height: 72px; place-items: center; background: var(--panem-red); color: #fff; font-size: 28px; clip-path: polygon(50% 0, 100% 25%, 87% 100%, 13% 100%, 0 25%); }
+.panem-staff-avatar { display: grid; flex: 0 0 72px; height: 72px; place-items: center; background: var(--panem-red); color: var(--panem-on-accent); font-size: 28px; clip-path: polygon(50% 0, 100% 25%, 87% 100%, 13% 100%, 0 25%); }
 .panem-board-panel[data-panem-panel="links"] { display: none; grid-template-columns: 1fr 1fr; align-content: center; gap: 7px; }
 .panem-board-panel[data-panem-panel="links"].active { display: grid; }
 .panem-board-panel[data-panem-panel="links"] a { padding: 9px; border-left: 3px solid var(--panem-red); background: var(--panem-2); font: 700 8px/1 var(--panem-font-title); text-align: center; text-transform: uppercase; }
@@ -271,18 +270,16 @@ img { max-width: 100%; }
   color: var(--panem-1);
 }
 
-.panem-category-head::after { content: ""; position: absolute; top: -70px; right: -80px; width: 190px; height: 190px; border: 30px solid var(--panem-red); transform: rotate(45deg); opacity: .16; }
 .panem-category-site { position: absolute; top: 25px; left: -5px; color: transparent; font: italic 800 48px/.8 var(--panem-font-title); letter-spacing: -4px; opacity: .18; white-space: nowrap; -webkit-text-stroke: 1px #fff; text-transform: uppercase; writing-mode: vertical-rl; }
-.panem-category-index { position: relative; z-index: 1; display: grid; width: 47px; height: 47px; place-items: center; border: 1px solid rgb(255 255 255 / 25%); color: #fff; font: 800 14px/1 var(--panem-font-title); }
+.panem-category-index { position: relative; z-index: 1; display: grid; width: 47px; height: 47px; place-items: center; border: 1px solid color-mix(in srgb, var(--panem-1) 25%, transparent); color: var(--panem-1); font: 800 14px/1 var(--panem-font-title); }
 .panem-category-index::before { content: "0" counter(panem-category); }
-.panem-category-name { position: relative; z-index: 1; width: 100%; color: #fff; font: italic 800 25px/.92 var(--panem-font-title); letter-spacing: -1px; text-transform: uppercase; }
+.panem-category-name { position: relative; z-index: 1; width: 100%; color: var(--panem-1); font: italic 800 25px/.92 var(--panem-font-title); letter-spacing: -1px; text-transform: uppercase; }
 .panem-category-name h2 { margin: 0; font: inherit; }
-.panem-category-mark { position: relative; z-index: 1; display: block; color: var(--panem-coral); font-size: 42px; }
+.panem-category-mark { position: absolute; top: 22px; right: -22px; z-index: 1; display: block; color: color-mix(in srgb, var(--panem-1) 13%, transparent); font-size: 122px; transform: rotate(-9deg); }
 
 .panem-layout-citizens .panem-category-head { background: var(--panem-red); }
-.panem-layout-citizens .panem-category-head::after { border-color: #fff; }
 .panem-layout-rp .panem-category-head { background: var(--panem-blue); }
-.panem-layout-rp .panem-category-mark { color: #fff; }
+.panem-layout-rp .panem-category-mark { color: color-mix(in srgb, var(--panem-on-accent) 20%, transparent); }
 .panem-layout-community .panem-category-head { background: color-mix(in srgb, var(--panem-text) 82%, var(--panem-red)); }
 
 .panem-forum-grid { counter-reset: panem-forum; display: flex; min-width: 0; flex-direction: column; gap: 10px; padding: 10px; background: var(--panem-2); }
@@ -302,7 +299,7 @@ img { max-width: 100%; }
 
 .panem-forum-status { position: absolute; top: 14px; left: 15px; z-index: 4; display: grid; width: 31px; height: 31px; place-items: center; border: 1px solid var(--panem-line); background: var(--panem-2); color: var(--panem-blue); font-size: 10px; }
 .panem-forum-status img { display: none; }
-.panem-forum.new .panem-forum-status, .panem-forum.new-post .panem-forum-status { background: var(--panem-red); color: #fff; }
+.panem-forum.new .panem-forum-status, .panem-forum.new-post .panem-forum-status { background: var(--panem-red); color: var(--panem-on-accent); }
 
 .panem-forum-heading { position: relative; grid-column: 1; grid-row: 1; min-width: 0; padding: 14px 20px 8px 59px; overflow: hidden; border-bottom: 1px solid var(--panem-line); }
 .panem-forum-heading::after { content: counter(panem-forum, decimal-leading-zero); position: absolute; right: 15px; bottom: -19px; color: var(--panem-red); font: italic 800 72px/.8 var(--panem-font-title); letter-spacing: -6px; opacity: .05; }
@@ -359,13 +356,13 @@ img { max-width: 100%; }
 
 .panem-online { display: grid; grid-template-columns: minmax(0, 1fr) 250px; grid-template-rows: 48px 1fr; gap: 10px; min-width: 0; padding: 16px; }
 .panem-stats-title { grid-column: 1 / -1; display: flex; align-items: center; gap: 9px; }
-.panem-stats-title i { display: grid; width: 39px; height: 39px; place-items: center; background: var(--panem-red); color: #fff; font-size: 15px; }
+.panem-stats-title i { display: grid; width: 39px; height: 39px; place-items: center; background: var(--panem-red); color: var(--panem-on-accent); font-size: 15px; }
 .panem-stats-title h3 { margin: 0; padding: 10px 13px; border: 1px solid var(--panem-line); background: var(--panem-1); font: 700 13px/1 var(--panem-font-title); text-transform: uppercase; }
-.panem-stats-title b { margin-left: auto; padding: 7px 10px; background: var(--panem-blue); color: #fff; font: 800 13px/1 var(--panem-font-title); }
+.panem-stats-title b { margin-left: auto; padding: 7px 10px; background: var(--panem-blue); color: var(--panem-on-accent); font: 800 13px/1 var(--panem-font-title); }
 .panem-online-list { display: flex; min-width: 0; flex-wrap: wrap; align-content: flex-start; gap: 7px; padding: 12px; overflow: auto; border: 1px solid var(--panem-line); background: var(--panem-1); }
 .panem-online-user { display: flex; height: 37px; align-items: center; gap: 6px; padding: 4px 8px 4px 4px; border: 1px solid var(--panem-line); background: var(--panem-2); font: 700 9px/1 var(--panem-font-title); }
 .panem-online-user img { width: 27px; height: 27px; object-fit: cover; }
-.panem-online-guest { height: 37px; padding: 11px; background: var(--panem-red); color: #fff; font: 700 8px/1 var(--panem-font-title); text-transform: uppercase; }
+.panem-online-guest { height: 37px; padding: 11px; background: var(--panem-red); color: var(--panem-on-accent); font: 700 8px/1 var(--panem-font-title); text-transform: uppercase; }
 .panem-recent { min-width: 0; padding: 13px; overflow: hidden; border: 1px solid var(--panem-line); border-top: 5px solid var(--panem-blue); background: var(--panem-1); }
 .panem-recent strong { display: block; margin-bottom: 8px; color: var(--panem-red); font: 700 8px/1 var(--panem-font-title); text-transform: uppercase; }
 .panem-recent > div { max-height: 155px; overflow: auto; font-size: 10px; line-height: 1.7; }
@@ -373,18 +370,18 @@ img { max-width: 100%; }
 .panem-groups { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--panem-line); background: var(--panem-1); }
 .panem-groups .group { position: relative; display: flex; height: 46px; align-items: center; gap: 8px; padding: 0 12px; overflow: hidden; border-right: 1px solid var(--panem-line); font: 700 8px/1 var(--panem-font-title); text-transform: uppercase; }
 .panem-groups .group:last-child { border-right: 0; }
-.panem-groups i { width: 8px; height: 8px; background: var(--group, var(--panem-red)); transform: rotate(45deg); }
+.panem-groups iconify-icon { width: 19px; height: 19px; color: var(--group, var(--panem-red)); }
 .panem-groups b { margin-left: auto; color: var(--group, var(--panem-red)); font-size: 15px; }
 
 /* 06. SECONDARY ----------------------------------------------------- */
 
 .panem-chatbox, .panem-login { display: flex; min-height: 62px; align-items: center; gap: 12px; margin: 18px 0; padding: 12px; border: 1px solid var(--panem-line); background: var(--panem-1); }
-.panem-chatbox > i { display: grid; width: 42px; height: 42px; place-items: center; background: var(--panem-red); color: #fff; font-size: 18px; }
+.panem-chatbox > i { display: grid; width: 42px; height: 42px; place-items: center; background: var(--panem-red); color: var(--panem-on-accent); font-size: 18px; }
 .panem-chatbox a { display: block; font: 800 14px/1 var(--panem-font-title); text-transform: uppercase; }
 .panem-chatbox span { display: block; margin-top: 4px; color: var(--panem-muted); font-size: 9px; }
 .panem-login label { display: flex; align-items: center; gap: 6px; font: 700 8px/1 var(--panem-font-title); text-transform: uppercase; }
 .panem-login input[type="text"], .panem-login input[type="password"] { height: 31px; padding: 6px; border: 1px solid var(--panem-line); border-radius: 0; background: var(--panem-2); color: var(--panem-text); }
-.panem-login input[type="submit"] { height: 31px; margin-left: auto; padding: 0 13px; border: 0; border-radius: 0; background: var(--panem-red); color: #fff; font: 700 8px/1 var(--panem-font-title); text-transform: uppercase; }
+.panem-login input[type="submit"] { height: 31px; margin-left: auto; padding: 0 13px; border: 0; border-radius: 0; background: var(--panem-red); color: var(--panem-on-accent); font: 700 8px/1 var(--panem-font-title); text-transform: uppercase; }
 
 .sidebar {
   position: fixed !important;
@@ -406,7 +403,7 @@ img { max-width: 100%; }
 
 .sidebar_top, .sidebar_bottom { display: flex; flex-direction: column; align-items: center; }
 .sidebar .button, .theme-toggle { display: grid; width: 43px; height: 43px; place-items: center; border: 0; border-top: 1px solid var(--panem-line); border-radius: 0; background: var(--panem-1); color: var(--panem-red); }
-.sidebar .button:hover, .theme-toggle:hover { background: var(--panem-red); color: #fff; }
+.sidebar .button:hover, .theme-toggle:hover { background: var(--panem-red); color: var(--panem-on-accent); }
 .sidebar #switcheroo { max-width: 42px; overflow: hidden; }
 .panel, .block { border-radius: 0; }
 .u-img-cover img, .u-img-square img { width: 100%; height: 100%; object-fit: cover; }

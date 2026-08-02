@@ -429,6 +429,9 @@ img { max-width: 100%; }
 .panem-groups { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--panem-line); background: var(--panem-1); }
 .panem-groups .group { position: relative; display: flex; min-height: 46px; align-items: center; gap: 8px; padding: 8px 12px; overflow: hidden; border-right: 1px solid var(--panem-line); font: 700 13px/1 var(--panem-font-title); text-transform: uppercase; }
 .panem-groups .group:last-child { border-right: 0; }
+.panem-groups .pentade { --group: #B38A42; }
+.panem-groups .capitole { --group: #B83F57; }
+.panem-groups .vainqueurs { --group: #3E8792; }
 .panem-groups iconify-icon { width: 19px; height: 19px; color: var(--group, var(--panem-red)); }
 .panem-groups b { margin-left: auto; color: var(--group, var(--panem-red)); font-size: 15px; }
 

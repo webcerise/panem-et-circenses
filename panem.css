@@ -267,6 +267,7 @@ img { max-width: 100%; }
 .panem-pa-staff-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(72px, 1fr)); gap: 8px; }
 .panem-pa-staff-card { display: flex; min-width: 0; min-height: 145px; flex-direction: column; align-items: center; justify-content: center; padding: 10px 6px; border: 1px solid var(--panem-line); background: var(--panem-1); color: var(--panem-text); text-align: center; }
 .panem-pa-staff-card > span { display: grid; width: 52px; height: 52px; margin-bottom: 11px; place-items: center; background: var(--panem-2); box-shadow: inset 0 -4px var(--panem-red); color: var(--panem-red); font-size: 21px; }
+.panem-pa-staff-card > span img { width: 100%; height: 100%; object-fit: cover; }
 .panem-pa-staff-card b { max-width: 100%; overflow: hidden; font: 800 13px/1 var(--panem-font-title); text-overflow: ellipsis; text-transform: uppercase; white-space: nowrap; }
 .panem-pa-staff-card small { margin-top: 6px; color: var(--panem-muted); font-size: 13px; }
 .panem-pa-staff-card:hover { border-color: var(--panem-red); color: var(--panem-red); }

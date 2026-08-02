@@ -13,12 +13,8 @@ body {
   color: var(--panem-ink);
   background-color: var(--panem-paper-blue);
   background-image:
-    linear-gradient(rgb(var(--panem-wash) / 72%), rgb(var(--panem-wash) / 86%)),
-    url("https://i.imgur.com/306YTwZ.jpeg");
-  background-position: center top;
-  background-repeat: no-repeat;
-  background-size: 100vw auto;
-  background-attachment: fixed;
+    repeating-linear-gradient(90deg, transparent 0 5px, rgb(4 8 11 / 4%) 5px 6px),
+    repeating-linear-gradient(0deg, transparent 0 3px, rgb(4 8 11 / 3%) 3px 4px);
   font-family: var(--panem-sans);
   font-size: 12px;
 }
@@ -143,11 +139,7 @@ a:hover {
   border: 1px solid var(--panem-ink);
   background-color: var(--panem-paper-blue);
   background-image:
-    linear-gradient(rgb(var(--panem-wash) / 76%), rgb(var(--panem-wash) / 76%)),
-    url("../images/fond.png"),
-    url("https://i.imgur.com/306YTwZ.jpeg");
-  background-position: center;
-  background-size: 920px 342px;
+    repeating-radial-gradient(ellipse at center, transparent 0 10px, rgb(4 8 11 / 4%) 11px 12px);
 }
 
 .pec-issue::before {
@@ -345,11 +337,7 @@ a:hover {
   border-radius: 0;
   background-color: var(--panem-paper-blue);
   background-image:
-    linear-gradient(rgb(var(--panem-wash) / 83%), rgb(var(--panem-wash) / 83%)),
-    url("../images/fond.png"),
-    url("https://i.imgur.com/306YTwZ.jpeg");
-  background-position: center;
-  background-size: 920px 342px;
+    repeating-linear-gradient(45deg, transparent 0 4px, rgb(4 8 11 / 5%) 4px 5px);
 }
 
 .container::before,
@@ -629,11 +617,7 @@ textarea {
   border-radius: 0;
   background-color: var(--panem-paper-blue);
   background-image:
-    linear-gradient(rgb(var(--panem-wash) / 83%), rgb(var(--panem-wash) / 83%)),
-    url("../images/fond.png"),
-    url("https://i.imgur.com/306YTwZ.jpeg");
-  background-position: center;
-  background-size: 920px 342px;
+    repeating-linear-gradient(-45deg, transparent 0 4px, rgb(4 8 11 / 5%) 4px 5px);
 }
 
 .hub_heading {

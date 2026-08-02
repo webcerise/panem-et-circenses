@@ -1188,3 +1188,160 @@ textarea {
   flex: none;
   margin-left: 10px;
 }
+
+/* 11 — SIGNATURE VISUELLE ------------------------------------------ */
+
+.container {
+  padding: 12px;
+  border: 1px solid var(--panem-line);
+  background: var(--panem-paper-blue);
+}
+
+.cate_heading {
+  position: relative;
+  grid-template-columns: 104px 1fr;
+  min-height: 92px;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--panem-ink);
+  border-bottom: 0;
+  background:
+    linear-gradient(105deg, var(--panem-wine) 0 38%, var(--panem-ink) 38% 100%);
+}
+
+.cate_heading::before {
+  content: "PANEM ET CIRCENSES";
+  position: absolute;
+  right: -8px;
+  bottom: -15px;
+  display: block;
+  color: transparent;
+  font-family: var(--panem-serif);
+  font-size: 56px;
+  font-style: italic;
+  line-height: 1;
+  white-space: nowrap;
+  -webkit-text-stroke: 1px rgb(255 255 255 / 17%);
+  opacity: .78;
+}
+
+.cate_index {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  height: 100%;
+  place-items: center;
+  padding: 0;
+  color: rgb(255 255 255 / 78%);
+  font-size: 61px;
+  line-height: 1;
+  letter-spacing: -.08em;
+  opacity: 1;
+}
+
+.cate_heading-copy {
+  position: relative;
+  z-index: 2;
+  align-self: center;
+  width: max-content;
+  max-width: 650px;
+  margin: 0;
+  padding: 9px 14px 10px;
+  border: 1px solid rgb(255 255 255 / 28%);
+  background: color-mix(in srgb, var(--panem-paper) 92%, transparent);
+}
+
+.cate_kicker {
+  margin-bottom: 4px;
+  color: var(--panem-wine);
+}
+
+.cate_title {
+  color: var(--panem-ink);
+  font-size: 27px;
+  font-style: normal;
+  text-transform: uppercase;
+}
+
+.forums {
+  border-color: var(--panem-ink);
+}
+
+.forum,
+.forum:nth-child(even) {
+  min-height: 136px;
+  grid-template-columns: 48px minmax(0, 1fr) 215px;
+}
+
+.forum:nth-child(even) {
+  background: color-mix(in srgb, var(--panem-paper-blue) 42%, var(--panem-paper));
+}
+
+.forum::after {
+  right: 215px;
+  bottom: 31px;
+}
+
+.forum_index {
+  padding-top: 19px;
+  background: transparent;
+  color: var(--panem-wine);
+}
+
+.forumtitle {
+  padding: 19px 25px 4px;
+  font-size: 28px;
+  text-transform: uppercase;
+}
+
+.forum_desc {
+  max-height: 47px;
+  padding: 5px 38px 17px 25px;
+}
+
+.forum_avatar {
+  z-index: 3;
+  align-self: end;
+  justify-self: end;
+  width: 68px;
+  height: 68px;
+  margin: 0 -9px -10px 0;
+  padding: 5px;
+  border: 1px solid var(--panem-line);
+  outline: 5px solid var(--panem-paper);
+  background: var(--panem-wine);
+}
+
+.forum_avatar img {
+  border-radius: 50%;
+}
+
+.forum_lastpost {
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  padding: 12px 68px 10px 16px;
+  background: var(--panem-paper);
+}
+
+.lastpost_link {
+  width: 124px;
+  color: var(--panem-wine);
+  font-size: 13px;
+}
+
+.forum_details {
+  min-height: 31px;
+  padding: 7px 13px 7px 25px;
+  background: var(--panem-ink);
+  color: var(--panem-paper);
+}
+
+.forum_subforums a,
+.forum_sub a {
+  border-bottom-color: rgb(255 255 255 / 35%);
+}
+
+.forum:nth-child(even) .forum_avatar {
+  outline-color: color-mix(in srgb, var(--panem-paper-blue) 42%, var(--panem-paper));
+}

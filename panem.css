@@ -708,7 +708,7 @@ img { max-width: 100%; }
 .panem-profile-view-citation:empty { display: none; }
 
 .panem-profile-view-fields { display: grid; min-height: 0; grid-template-columns: repeat(2, minmax(0, 1fr)); align-content: start; gap: 8px; padding: 12px; overflow: auto; background: var(--panem-1); box-sizing: border-box; }
-.panem-profile-view-field { position: relative; min-width: 0; margin: 0; padding: 10px 11px; border: 1px solid var(--panem-line); background: var(--panem-2); box-sizing: border-box; }
+.panem-profile-view-field { position: relative; min-width: 0; margin: 0; padding: 10px 11px; border: 1px solid var(--panem-line); background: var(--panem-2); box-sizing: border-box; display: block; }
 .panem-profile-view-field label { display: block; margin-bottom: 7px; color: var(--profile-accent); font: 700 13px/1 var(--panem-font-title); text-transform: uppercase; }
 .panem-profile-view-field field { display: block; min-width: 0; color: var(--panem-text); font-size: 13px; line-height: 1.45; overflow-wrap: anywhere; }
 .panem-profile-view-postlinks { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 8px; }

@@ -315,7 +315,16 @@ img { max-width: 100%; }
 .panem-category-index::before { content: "0" counter(panem-category); }
 .panem-category-name { position: relative; z-index: 1; width: 100%; color: var(--panem-1); font: italic 800 25px/.92 var(--panem-font-title); letter-spacing: -1px; text-transform: uppercase; }
 .panem-category-name h2 { margin: 0; font: inherit; }
-.panem-category-mark { position: absolute; top: 22px; right: -22px; z-index: 1; display: block; color: color-mix(in srgb, var(--panem-1) 13%, transparent); font-size: 122px; transform: rotate(-9deg); }
+.panem-category-mark {
+  position: absolute;
+  top: -22px;
+  right: -22px;
+  z-index: 1;
+  display: block;
+  color: color-mix(in srgb, var(--panem-1) 13%, transparent);
+  font-size: 104px;
+  transform: rotate(-9deg);
+}
 
 .panem-layout-citizens .panem-category-head { background: var(--panem-red); }
 .panem-layout-rp .panem-category-head { background: var(--panem-blue); }
@@ -373,9 +382,6 @@ img { max-width: 100%; }
 .panem-forum-counts b { margin-right: 3px; color: var(--panem-red); font-size: 13px; }
 
 /* Variations discrètes, sans changer la silhouette générale. */
-.panem-layout-intro .panem-forum:first-child { min-height: 190px; }
-.panem-layout-intro .panem-forum:first-child .panem-forum-heading { padding-top: 20px; }
-.panem-layout-intro .panem-forum:first-child .forumtitle { font-size: 25px; }
 .panem-layout-rp .panem-forum-bottom::before { background: var(--panem-blue); }
 .panem-layout-rp .panem-forum-avatar { background: var(--panem-blue); }
 .panem-layout-community .panem-forum { grid-template-columns: minmax(0, 1fr) 225px; }

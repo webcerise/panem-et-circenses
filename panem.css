@@ -1,7 +1,9 @@
 /* PANEM ET CIRCENSES
- * Feuille de style personnalisée destinée à être hébergée sur GitHub.
- * Les styles natifs du thème Blank restent dans styles.css.
+ * Identité visuelle inspirée du header : billet gravé, joaillerie et presse du Capitole.
+ * Le socle technique et les variables globales restent dans styles.css.
  */
+
+/* ===== PAGE ======================================================= */
 
 html {
   background: var(--panem-paper-blue);
@@ -9,52 +11,83 @@ html {
 
 body {
   margin: 0;
-  background:
-    linear-gradient(color-mix(in srgb, var(--panem-paper) 68%, transparent), color-mix(in srgb, var(--panem-paper) 68%, transparent)),
-    repeating-linear-gradient(90deg, transparent 0 47px, rgba(8, 9, 10, .035) 47px 48px),
-    var(--panem-paper-blue);
+  background-color: var(--panem-paper-blue);
+  background-image:
+    repeating-linear-gradient(0deg, transparent 0 3px, rgb(8 9 10 / 4%) 3px 4px),
+    repeating-linear-gradient(90deg, transparent 0 5px, rgb(8 9 10 / 3%) 5px 6px);
   color: var(--panem-ink);
   font-family: var(--panem-sans);
-  font-size: 14px;
+  font-size: 13px;
 }
 
-body::before {
+body::before,
+body::after {
   content: "";
   position: fixed;
-  inset: 0;
   z-index: -1;
-  pointer-events: none;
-  opacity: .16;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.24'/%3E%3C/svg%3E");
+  top: 0;
+  bottom: 0;
+  width: calc((100vw - 1000px) / 2);
+  min-width: 30px;
+  opacity: .42;
+  background:
+    radial-gradient(ellipse at center, transparent 0 43%, var(--panem-ink) 44% 45%, transparent 46% 53%, var(--panem-ink) 54% 55%, transparent 56%),
+    repeating-linear-gradient(45deg, transparent 0 4px, var(--panem-line) 4px 5px);
 }
 
-.main_forum {
-  width: 1000px;
-  margin: 0 auto;
-  padding: 0 40px 60px;
-  background: color-mix(in srgb, var(--panem-paper) 94%, transparent);
-  border: 0;
-  border-radius: 0;
-  box-shadow: 0 0 70px rgba(23, 40, 50, .15);
-}
-
-#page-body {
-  padding-top: 26px;
-  counter-reset: panem-category;
-}
+body::before { left: 0; }
+body::after { right: 0; transform: scaleX(-1); }
 
 a {
   color: inherit;
   text-decoration: none;
+  transition: color .15s ease;
 }
 
 a:hover {
   color: var(--panem-wine-bright);
 }
 
-/* Header source 1840 × 684, affiché à 920 × 342 pour le Retina. */
+.main_forum {
+  box-sizing: border-box;
+  width: 1000px;
+  margin: 0 auto;
+  padding: 0 40px 70px;
+  border: solid var(--panem-ink);
+  border-width: 0 1px;
+  border-radius: 0;
+  background-color: var(--panem-paper);
+  background-image:
+    linear-gradient(90deg, transparent 39px, rgb(8 9 10 / 7%) 40px, transparent 41px),
+    linear-gradient(90deg, transparent 879px, rgb(8 9 10 / 7%) 880px, transparent 881px);
+  box-shadow: 0 0 45px rgb(19 41 54 / 18%);
+}
+
+#page-body {
+  padding-top: 28px;
+  counter-reset: panem-category;
+}
+
+/* ===== HEADER ET NAVIGATION ====================================== */
+
 #page-header {
-  padding-top: 0;
+  position: relative;
+}
+
+#page-header::after {
+  content: "PANEM · ET · CIRCENSES";
+  display: block;
+  width: 920px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 5px 10px 4px;
+  border: solid var(--panem-ink);
+  border-width: 1px 0;
+  font-family: var(--panem-sans);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: .62em;
+  text-align: center;
 }
 
 #header {
@@ -62,13 +95,9 @@ a:hover {
   width: 920px;
   height: 342px;
   margin: 0 auto;
-  overflow: hidden;
   border: 0;
   border-radius: 0;
-  background-image: var(--header);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 920px 342px;
+  background: var(--header) center / 920px 342px no-repeat;
 }
 
 #header img {
@@ -76,83 +105,125 @@ a:hover {
 }
 
 .navbar {
-  min-height: 40px;
-  margin: 0 auto;
+  width: 920px;
+  box-sizing: border-box;
+  margin: 8px auto 0;
   padding: 0;
-  border: solid var(--panem-ink);
-  border-width: 1px 0;
-  border-radius: 0;
-  background: transparent;
   display: flex;
   justify-content: center;
-  flex-wrap: nowrap;
+  border: 1px solid var(--panem-ink);
+  border-radius: 0;
+  background: var(--panem-ink);
 }
 
 .navbar a {
-  padding: 13px 17px 11px;
+  position: relative;
+  padding: 12px 14px 11px;
   border-radius: 0;
+  color: var(--panem-paper);
   font-family: var(--panem-sans);
-  font-size: 9px;
+  font-size: 8px;
   font-weight: 700;
-  letter-spacing: .16em;
-  line-height: 1;
+  letter-spacing: .14em;
   text-transform: uppercase;
 }
 
 .navbar a + a::before {
-  content: "";
-  display: inline-block;
-  width: 1px;
-  height: 9px;
-  margin: 0 17px 0 -17px;
-  vertical-align: -1px;
-  background: var(--panem-line);
+  content: "◆";
+  position: absolute;
+  left: -3px;
+  color: var(--panem-wine-bright);
+  font-size: 6px;
+}
+
+.navbar a:hover {
+  background: var(--panem-paper);
+  color: var(--panem-wine);
 }
 
 .nav-logout,
 .nav-register {
   background: transparent;
-  color: var(--panem-wine);
 }
 
-/* Ouverture éditoriale. */
+/* ===== UNE / ÉDITION ============================================= */
+
 .index-edition {
+  position: relative;
+  isolation: isolate;
+  box-sizing: border-box;
   display: grid;
-  grid-template-columns: 190px 1fr 180px;
-  min-height: 210px;
-  margin-bottom: 28px;
-  border-bottom: 1px solid var(--panem-ink);
+  grid-template-columns: 168px 1fr 170px;
+  min-height: 230px;
+  margin-bottom: 44px;
+  overflow: hidden;
+  border: 1px solid var(--panem-ink);
+  outline: 5px double var(--panem-line);
+  outline-offset: -9px;
+  background:
+    radial-gradient(ellipse at center, transparent 0 57%, rgb(8 9 10 / 10%) 57.5% 58%, transparent 58.5%),
+    repeating-radial-gradient(ellipse at center, transparent 0 9px, rgb(8 9 10 / 5%) 10px 11px),
+    var(--panem-paper-blue);
+}
+
+.index-edition::before,
+.index-edition::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 260px;
+  height: 260px;
+  border: 14px double var(--panem-ink);
+  border-radius: 50%;
+  opacity: .18;
+}
+
+.index-edition::before {
+  top: -130px;
+  left: -120px;
+}
+
+.index-edition::after {
+  right: -120px;
+  bottom: -145px;
 }
 
 .index-edition__meta {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  gap: 4px;
-  padding: 22px 24px 25px 0;
-  border-right: 1px solid var(--panem-line);
-  color: var(--panem-muted);
-  font-family: var(--panem-sans);
-  font-size: 9px;
+  gap: 5px;
+  margin: 16px 0 16px 16px;
+  padding: 18px 17px;
+  border-right: 1px solid var(--panem-ink);
+  font-size: 8px;
   font-weight: 700;
-  letter-spacing: .14em;
+  letter-spacing: .16em;
+  line-height: 1.5;
   text-transform: uppercase;
 }
 
+.index-edition__meta::before {
+  content: "LE JOURNAL DU CAPITOLE";
+  margin-bottom: auto;
+  color: var(--panem-wine);
+}
+
 .index-edition__lead {
-  align-self: end;
-  padding: 24px 32px 22px;
+  align-self: center;
+  padding: 34px 30px;
+  text-align: center;
 }
 
 .index-edition__kicker,
 .cate_kicker,
 .hub_kicker {
-  margin: 0 0 7px;
+  margin: 0 0 8px;
   color: var(--panem-wine);
   font-family: var(--panem-sans);
-  font-size: 9px;
+  font-size: 8px;
   font-weight: 700;
-  letter-spacing: .2em;
+  letter-spacing: .24em;
   text-transform: uppercase;
 }
 
@@ -160,134 +231,240 @@ a:hover {
   margin: 0;
   color: var(--panem-ink);
   font-family: var(--panem-serif);
-  font-size: 72px;
+  font-size: 65px;
   font-weight: 400;
-  letter-spacing: -.055em;
+  letter-spacing: -.06em;
   line-height: .82;
-  text-align: left;
-  text-transform: none;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .index-edition__copy {
-  max-width: 440px;
-  margin: 17px 0 0;
-  color: var(--panem-muted);
-  font-family: var(--panem-sans);
+  max-width: 420px;
+  margin: 18px auto 0;
+  font-family: var(--panem-serif);
   font-size: 14px;
   font-style: italic;
   line-height: 1.35;
 }
 
 .index-edition__number {
+  align-self: stretch;
   display: grid;
-  place-items: end center;
-  padding-bottom: 9px;
-  border-left: 1px solid var(--panem-line);
+  place-items: center;
+  margin: 16px 16px 16px 0;
+  border-left: 1px solid var(--panem-ink);
   color: var(--panem-wine);
-  font-size: 148px;
-  line-height: .75;
-  letter-spacing: -.09em;
+  font-family: var(--panem-serif);
+  font-size: 116px;
+  letter-spacing: -.1em;
+  line-height: 1;
 }
+
+.index-gems {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.index-gems i {
+  position: absolute;
+  display: block;
+  width: 24px;
+  height: 18px;
+  border: 2px solid var(--panem-ink);
+  border-radius: 45% 55% 50% 48%;
+  background:
+    linear-gradient(135deg, #fff 0 8%, transparent 9%),
+    radial-gradient(circle at 70% 70%, #290007, #760015 52%, #070001 72%);
+  box-shadow: 2px 3px 0 rgb(8 9 10 / 22%);
+  transform: rotate(var(--gem-turn, 0deg));
+}
+
+.index-gems i:nth-child(1) { --gem-turn: 18deg; top: 23px; left: 214px; }
+.index-gems i:nth-child(2) { --gem-turn: -23deg; top: 42px; right: 220px; width: 31px; height: 23px; }
+.index-gems i:nth-child(3) { --gem-turn: 31deg; bottom: 24px; left: 265px; }
+.index-gems i:nth-child(4) { --gem-turn: -11deg; right: 190px; bottom: 36px; width: 20px; height: 27px; }
+.index-gems i:nth-child(5) { --gem-turn: 45deg; top: 102px; right: 145px; width: 17px; height: 17px; }
 
 .introduction {
-  margin: 0 0 40px;
-  padding: 24px 0;
-  border: solid var(--panem-line);
-  border-width: 1px 0;
+  position: relative;
+  margin: 0 0 46px;
+  padding: 28px 34px;
+  border: 1px solid var(--panem-ink);
   border-radius: 0;
-  background: transparent;
-  font-family: var(--panem-sans);
-  line-height: 1.6;
+  background: var(--panem-paper);
+  font-size: 12px;
+  line-height: 1.7;
+  column-count: 2;
+  column-gap: 42px;
+  column-rule: 1px solid var(--panem-line);
 }
 
-/* Catégories. */
-.container {
-  counter-increment: panem-category;
-  margin: 0 0 54px;
-  padding: 0;
-  border-radius: 0;
-  background: transparent;
+.introduction::before {
+  content: "COMMUNIQUÉ";
+  position: absolute;
+  top: -10px;
+  left: 32px;
+  padding: 3px 9px;
+  background: var(--panem-ink);
+  color: var(--panem-paper);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: .2em;
 }
+
+/* ===== CATÉGORIES ================================================= */
+
+.container {
+  position: relative;
+  counter-increment: panem-category;
+  margin: 0 0 58px;
+  padding: 14px;
+  border: 1px solid var(--panem-ink);
+  border-radius: 0;
+  background:
+    repeating-linear-gradient(45deg, transparent 0 3px, rgb(8 9 10 / 5%) 3px 4px),
+    var(--panem-paper-blue);
+}
+
+.container::before,
+.container::after {
+  content: "◆";
+  position: absolute;
+  top: 29px;
+  color: var(--panem-wine);
+  font-size: 15px;
+}
+
+.container::before { left: 30px; }
+.container::after { right: 30px; }
 
 .cate_heading {
   display: grid;
-  grid-template-columns: 94px 1fr;
-  align-items: end;
-  min-height: 96px;
-  border-bottom: 4px double var(--panem-ink);
+  grid-template-columns: 90px 1fr 90px;
+  align-items: center;
+  min-height: 92px;
+  margin-bottom: 14px;
+  border: 4px double var(--panem-ink);
+  background: var(--panem-paper);
+  text-align: center;
+}
+
+.cate_heading::after {
+  content: counter(panem-category, upper-roman);
+  color: var(--panem-muted);
+  font-family: var(--panem-serif);
+  font-size: 28px;
+}
+
+.cate_index {
+  color: var(--panem-wine);
+  font-family: var(--panem-serif);
+  font-size: 48px;
 }
 
 .cate_index::before {
   content: counter(panem-category, decimal-leading-zero);
 }
 
-.cate_index {
-  padding-bottom: 12px;
-  color: var(--panem-wine);
-  font-size: 54px;
-  line-height: .75;
-}
-
 .cate_heading-copy {
-  padding: 0 0 12px 22px;
-  border-left: 1px solid var(--panem-line);
+  padding: 12px 20px;
+  border: solid var(--panem-line);
+  border-width: 0 1px;
 }
 
 .cate_title {
   font-family: var(--panem-serif);
-  font-size: 47px;
+  font-size: 42px;
   font-weight: 400;
   letter-spacing: -.035em;
   line-height: .9;
+  text-transform: uppercase;
 }
 
 .forums {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
   counter-reset: panem-forum;
 }
 
 .forum {
+  position: relative;
   counter-increment: panem-forum;
+  box-sizing: border-box;
   display: grid;
-  grid-template-columns: 66px 1fr;
-  padding: 24px 0 22px;
-  border-bottom: 1px solid var(--panem-line);
+  grid-template-rows: auto 1fr auto;
+  min-height: 238px;
+  overflow: hidden;
+  border: 1px solid var(--panem-ink);
   border-radius: 0;
-  background: transparent;
+  background: var(--panem-paper);
+}
+
+.forum::before,
+.forum::after {
+  content: "";
+  position: absolute;
+  width: 38px;
+  height: 38px;
+  pointer-events: none;
+  border-color: var(--panem-wine);
+}
+
+.forum::before {
+  top: 6px;
+  left: 6px;
+  border-top: 1px solid;
+  border-left: 1px solid;
+}
+
+.forum::after {
+  right: 6px;
+  bottom: 6px;
+  border-right: 1px solid;
+  border-bottom: 1px solid;
 }
 
 .forum_index {
-  grid-row: 1 / span 3;
-  color: var(--panem-muted);
+  position: absolute;
+  z-index: 2;
+  top: 13px;
+  right: 14px;
+  color: var(--panem-wine);
   font-family: var(--panem-sans);
-  font-size: 9px;
+  font-size: 8px;
   font-weight: 700;
   letter-spacing: .1em;
 }
 
 .forum_index::before {
-  content: counter(panem-category, decimal-leading-zero) "." counter(panem-forum, decimal-leading-zero);
+  content: counter(panem-category, decimal-leading-zero) "/" counter(panem-forum, decimal-leading-zero);
 }
 
 .forumtitle {
-  grid-column: 2;
-  margin-bottom: 13px;
+  display: block;
+  box-sizing: border-box;
+  width: calc(100% - 56px);
+  margin: 0;
+  padding: 20px 22px 12px;
   font-family: var(--panem-serif);
   font-size: 28px;
   font-weight: 400;
   letter-spacing: -.025em;
-  line-height: 1;
-}
-
-.forum_content,
-.forum_details {
-  grid-column: 2;
+  line-height: .95;
+  text-transform: uppercase;
 }
 
 .forum_content {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 54px 185px;
-  gap: 18px;
-  align-items: center;
+  grid-template-columns: 1fr 58px;
+  grid-template-rows: 1fr auto;
+  gap: 14px;
+  align-items: end;
+  padding: 6px 22px 15px;
 }
 
 .forum-img {
@@ -295,321 +472,73 @@ a:hover {
 }
 
 .forum_desc {
-  max-height: 72px;
+  align-self: start;
+  max-height: 67px;
   overflow: auto;
-  padding-right: 20px;
+  padding: 0 15px 0 0;
   color: var(--panem-muted);
   font-family: var(--panem-sans);
-  font-size: 13px;
+  font-size: 11px;
   line-height: 1.45;
+  text-align: justify;
 }
 
 .forum_avatar {
-  width: 54px;
-  height: 54px;
-  filter: grayscale(1) contrast(1.08);
+  width: 58px;
+  height: 72px;
+  border: 1px solid var(--panem-ink);
+  filter: grayscale(1) contrast(1.18);
 }
 
 .forum_lastpost {
-  width: auto;
+  grid-column: 1 / -1;
+  box-sizing: border-box;
+  width: 100%;
+  padding-top: 11px;
+  border-top: 1px solid var(--panem-line);
   font-family: var(--panem-sans);
-  font-size: 9px;
+  font-size: 8px;
+  letter-spacing: .04em;
   line-height: 1.45;
   text-transform: uppercase;
 }
 
 .lastpost_link {
-  display: block;
-  margin-bottom: 3px;
+  display: inline-block;
+  max-width: 270px;
   overflow: hidden;
+  color: var(--panem-wine);
   font-family: var(--panem-serif);
-  font-size: 14px;
+  font-size: 13px;
   font-style: italic;
+  letter-spacing: 0;
   line-height: 1.1;
   text-overflow: ellipsis;
   text-transform: none;
+  vertical-align: bottom;
   white-space: nowrap;
 }
 
 .forum_details {
   display: flex;
   justify-content: space-between;
-  gap: 20px;
-  margin-top: 15px;
-  padding-top: 10px;
-  border-top: 1px solid rgba(170, 184, 193, .55);
-  color: var(--panem-muted);
+  gap: 12px;
+  padding: 9px 22px;
+  border-top: 1px solid var(--panem-ink);
+  background: var(--panem-ink);
+  color: var(--panem-paper);
   font-family: var(--panem-sans);
-  font-size: 9px;
+  font-size: 7px;
+  font-weight: 700;
   letter-spacing: .08em;
   text-transform: uppercase;
 }
 
-/* Qui est en ligne. */
-.hub {
-  display: grid;
-  grid-template-columns: 1.15fr 1fr 1fr;
-  grid-template-rows: auto 220px auto;
-  gap: 0;
-  margin: 48px 0 0;
-  padding: 0;
-  border: solid var(--panem-ink);
-  border-width: 4px 0 1px;
-  border-radius: 0;
-  background: transparent;
-}
-
-.hub_heading {
-  grid-column: 1 / -1;
-  padding: 18px 0 14px;
-  border-bottom: 1px solid var(--panem-ink);
-}
-
-.hub_title {
-  margin: 0;
-  font-family: var(--panem-serif);
-  font-size: 38px;
-  font-weight: 400;
-  letter-spacing: -.035em;
-  text-align: left;
-  text-transform: none;
-}
-
-.hub_infos,
-.hub_onlineUsers,
-.hub_lastConnected {
-  height: 220px;
-  border-radius: 0;
-  background: transparent;
-}
-
-.hub_infos,
-.hub_onlineUsers {
-  border-right: 1px solid var(--panem-line);
-}
-
-.hub_lastUser,
-.hub_details,
-.hub_onlineUsers,
-.hub_lastConnected {
-  background: transparent;
-}
-
-.hub_lastUser {
-  border-bottom: 1px solid var(--panem-line);
-}
-
-.hub_groups {
-  grid-column: 1 / -1;
-  padding-top: 12px;
-  border-top: 1px solid var(--panem-ink);
-}
-
-.hub_groups .group {
-  border: 1px solid var(--panem-line);
-  border-radius: 0;
-  background: transparent;
-  font-family: var(--panem-sans);
-  font-size: 9px;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-}
-
-.page-actions {
-  border: 0;
-  border-radius: 0;
-  font-family: var(--panem-sans);
-  font-size: 9px;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-}
-
-/* ==================================================================
-   06. TRAITEMENT BRUTALISTE
-   ================================================================== */
-
-body {
-  background-color: var(--panem-paper-blue);
-  background-image:
-    linear-gradient(var(--panem-line) 1px, transparent 1px),
-    linear-gradient(90deg, var(--panem-line) 1px, transparent 1px);
-  background-size: 48px 48px;
-}
-
-body::before {
-  display: none;
-}
-
-.main_forum {
-  box-sizing: border-box;
-  width: 1000px;
-  padding: 0 38px 60px;
-  border: solid var(--panem-ink);
-  border-width: 0 3px 3px;
-  background: var(--panem-paper);
-  box-shadow: 14px 14px 0 var(--panem-ink);
-}
-
-#header {
-  box-sizing: content-box;
-  border: 3px solid var(--panem-ink);
-  border-top: 0;
-}
-
-.navbar {
-  min-height: 44px;
-  border-width: 3px 0;
-}
-
-.navbar a {
-  padding: 16px 17px 14px;
-}
-
-.navbar a:hover,
-.navbar a:focus-visible {
-  background: var(--panem-ink);
-  color: var(--panem-paper);
-}
-
-.navbar a + a::before {
-  width: 2px;
-  height: 12px;
-  background: var(--panem-ink);
-}
-
-.index-edition {
-  min-height: 240px;
-  margin-top: 14px;
-  border: 3px solid var(--panem-ink);
-}
-
-.index-edition__meta {
-  padding: 18px;
-  border-right: 3px solid var(--panem-ink);
-  color: var(--panem-ink);
-  justify-content: space-between;
-}
-
-.index-edition__meta::before {
-  content: "ARCHIVES / ÉTAT";
-  display: block;
-  padding: 7px;
-  background: var(--panem-ink);
-  color: var(--panem-paper);
-}
-
-.index-edition__lead {
-  align-self: stretch;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-}
-
-.index-edition h1 {
-  font-size: 79px;
-  line-height: .76;
-}
-
-.index-edition__number {
-  padding: 0 13px 10px 0;
-  border-left: 3px solid var(--panem-ink);
-  background: var(--panem-wine);
-  color: #fff;
-  place-items: end;
-}
-
-.index-edition__kicker,
-.cate_kicker,
-.hub_kicker {
-  width: max-content;
-  padding: 4px 7px;
-  background: var(--panem-ink);
-  color: var(--panem-paper);
-}
-
-.introduction {
-  padding: 28px;
-  border: 3px solid var(--panem-ink);
-}
-
-.container {
-  border: 3px solid var(--panem-ink);
-}
-
-.cate_heading {
-  min-height: 110px;
-  border-bottom: 3px solid var(--panem-ink);
-}
-
-.cate_index {
-  align-self: stretch;
-  display: grid;
-  place-items: end center;
-  padding: 0 0 12px;
-  background: var(--panem-ink);
-  color: var(--panem-paper);
-}
-
-.cate_heading-copy {
-  border-left: 0;
-  padding: 20px 24px 16px;
-}
-
-.cate_title {
-  font-size: 52px;
-  text-transform: uppercase;
-}
-
-.forum {
-  grid-template-columns: 66px 1fr;
-  padding: 0;
-  border-bottom: 3px solid var(--panem-ink);
-}
-
-.forum:last-child {
-  border-bottom: 0;
-}
-
-.forum_index {
-  box-sizing: border-box;
-  align-self: stretch;
-  padding: 22px 9px;
-  border-right: 3px solid var(--panem-ink);
-  background: var(--panem-paper-blue);
-  color: var(--panem-ink);
-  writing-mode: vertical-rl;
-}
-
-.forumtitle {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 20px 22px 12px;
-  border-bottom: 1px solid var(--panem-ink);
-  font-size: 34px;
-  text-transform: uppercase;
-}
-
-.forum_content {
-  box-sizing: border-box;
-  padding: 18px 22px;
-}
-
-.forum_avatar {
-  border: 2px solid var(--panem-ink);
-}
-
-.forum_lastpost {
-  padding-left: 15px;
-  border-left: 2px solid var(--panem-ink);
-}
-
-.forum_details {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 10px 22px;
-  border-top: 1px solid var(--panem-ink);
-  background: var(--panem-ink);
-  color: var(--panem-paper);
+.forum_sub {
+  max-width: 260px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .forum_sub a:hover {
@@ -617,44 +546,23 @@ body::before {
   text-decoration: underline;
 }
 
-.hub {
-  border: 3px solid var(--panem-ink);
-}
+/* ===== ACTIONS ==================================================== */
 
-.hub_heading {
-  padding: 18px 20px 15px;
-  border-bottom: 3px solid var(--panem-ink);
-}
-
-.hub_title {
-  font-size: 48px;
+.page-actions {
+  margin: 22px 0;
+  padding: 10px 0;
+  border: solid var(--panem-ink);
+  border-width: 1px 0;
+  border-radius: 0;
+  font-family: var(--panem-sans);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: .09em;
   text-transform: uppercase;
 }
 
-.hub_infos,
-.hub_onlineUsers {
-  border-right: 3px solid var(--panem-ink);
-}
-
-.hub_lastUser,
-.hub_groups {
-  border-color: var(--panem-ink);
-}
-
-.hub_groups {
-  gap: 0;
-  padding: 0;
-  border-top-width: 3px;
-}
-
-.hub_groups .group {
-  border: 0;
-  border-right: 2px solid var(--panem-ink);
-  padding: 13px 16px;
-}
-
-.hub_groups .group:last-child {
-  border-right: 0;
+.page-actions .separator {
+  color: var(--panem-wine);
 }
 
 .button,
@@ -665,9 +573,120 @@ textarea {
   border-radius: 0;
 }
 
-.page-actions {
-  margin: 18px 0;
-  padding: 10px 0;
-  border: solid var(--panem-ink);
-  border-width: 1px 0;
+.button {
+  border: 1px solid var(--panem-ink);
+  background: var(--panem-paper-blue);
+}
+
+/* ===== REGISTRE / QUI EST EN LIGNE =============================== */
+
+.hub {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr 1fr;
+  grid-template-rows: auto 220px auto;
+  gap: 0;
+  margin: 52px 0 0;
+  padding: 14px;
+  border: 1px solid var(--panem-ink);
+  border-radius: 0;
+  background:
+    repeating-linear-gradient(-45deg, transparent 0 3px, rgb(8 9 10 / 5%) 3px 4px),
+    var(--panem-paper-blue);
+}
+
+.hub_heading {
+  grid-column: 1 / -1;
+  padding: 18px 20px 16px;
+  border: 4px double var(--panem-ink);
+  background: var(--panem-paper);
+  text-align: center;
+}
+
+.hub_title {
+  margin: 0;
+  font-family: var(--panem-serif);
+  font-size: 43px;
+  font-weight: 400;
+  letter-spacing: -.04em;
+  line-height: .9;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.hub_infos,
+.hub_onlineUsers,
+.hub_lastConnected {
+  box-sizing: border-box;
+  height: 220px;
+  margin-top: 14px;
+  border-radius: 0;
+  background: var(--panem-paper);
+}
+
+.hub_infos,
+.hub_onlineUsers {
+  border-right: 1px solid var(--panem-ink);
+}
+
+.hub_lastUser,
+.hub_details,
+.hub_onlineUsers,
+.hub_lastConnected {
+  background: var(--panem-paper);
+}
+
+.hub_lastUser {
+  border-bottom: 1px solid var(--panem-line);
+}
+
+.hub_lastUser img,
+.user-avatar {
+  filter: grayscale(1) contrast(1.15);
+}
+
+.hub_groups {
+  grid-column: 1 / -1;
+  gap: 0;
+  padding: 0;
+  border: 1px solid var(--panem-ink);
+  background: var(--panem-ink);
+}
+
+.hub_groups .group {
+  border: 0;
+  border-right: 1px solid var(--panem-paper);
+  border-radius: 0;
+  background: var(--panem-ink);
+  color: var(--panem-paper);
+  font-family: var(--panem-sans);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.hub_groups .group:last-child {
+  border-right: 0;
+}
+
+/* ===== BARRE LATÉRALE ============================================ */
+
+.sidebar {
+  border-right: 1px solid var(--panem-ink);
+  border-radius: 0;
+  background: var(--panem-paper);
+}
+
+.sidebar .button,
+.theme-toggle {
+  border: 1px solid var(--panem-ink);
+  border-radius: 50%;
+  background: var(--panem-paper);
+  color: var(--panem-ink);
+}
+
+.sidebar .button:hover,
+.theme-toggle:hover {
+  background: var(--panem-wine);
+  color: #fff;
 }

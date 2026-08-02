@@ -432,7 +432,12 @@ img { max-width: 100%; }
 .panem-groups .pentade { --group: #B38A42; }
 .panem-groups .capitole { --group: #B83F57; }
 .panem-groups .vainqueurs { --group: #3E8792; }
-.panem-groups iconify-icon { width: 19px; height: 19px; color: var(--group, var(--panem-red)); }
+.panem-groups iconify-icon {
+  width: 19px;
+  height: 19px;
+  font-size: 19px;
+  color: var(--group, var(--panem-red));
+}
 .panem-groups b { margin-left: auto; color: var(--group, var(--panem-red)); font-size: 15px; }
 
 /* 06. SECONDARY ----------------------------------------------------- */

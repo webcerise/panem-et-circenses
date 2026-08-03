@@ -140,6 +140,7 @@ img { max-width: 100%; }
 .pec-nav-switcheroo #switcheroo { min-width: 0; overflow-x: visible; padding: 4px 2px; }
 .pec-nav-switcheroo .switcheroo__squircles { flex-direction: row; align-items: center; gap: 9px; margin: 0; padding: 0; }
 .pec-nav-switcheroo .switcheroo__squircle { width: 36px; flex: 0 0 36px; border-radius: 0; }
+.pec-nav-switcheroo .switcheroo__squircle.active { display: block; outline: 2px solid var(--panem-red); outline-offset: 2px; cursor: context-menu; }
 .pec-nav-switcheroo .switcheroo__avatar { border-radius: 0; }
 .pec-nav-switcheroo .switcheroo__squircle--button { display: grid; place-items: center; border: 1px solid var(--panem-line); background: var(--panem-2); }
 

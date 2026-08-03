@@ -666,7 +666,52 @@ img { max-width: 100%; }
 
 #page-footer { padding: 18px; color: var(--panem-muted); font-size: 13px; text-align: center; }
 
-/* 07. AFFICHAGE D'UN FORUM ----------------------------------------- */
+/* 07. FIL D'ACTIVITÉ ------------------------------------------------ */
+
+.panem-discover-hero {
+  position: relative;
+  display: grid;
+  min-height: 190px;
+  grid-template-columns: minmax(0, 1fr) 190px;
+  margin-top: 28px;
+  overflow: hidden;
+  border: 1px solid var(--panem-line);
+  background: var(--panem-1);
+  box-shadow: var(--panem-shadow);
+}
+
+.panem-discover-heading { align-self: center; min-width: 0; padding: 34px 40px; }
+.panem-discover-heading > span { color: var(--panem-red); font: 700 13px/1 var(--panem-font-title); letter-spacing: .14em; text-transform: uppercase; }
+.panem-discover-heading h1 { margin: 12px 0 10px; overflow: hidden; color: var(--panem-text); font: italic 800 38px/.9 var(--panem-font-title); letter-spacing: -2px; text-align: left; text-overflow: ellipsis; text-transform: uppercase; white-space: nowrap; }
+.panem-discover-heading p { margin: 0; color: var(--panem-muted); font-size: 13px; }
+.panem-discover-hero > iconify-icon { align-self: center; width: 145px; height: 145px; color: var(--panem-red); font-size: 145px; opacity: .14; transform: rotate(-8deg); }
+
+.panem-discover { margin: 18px 0 28px; }
+.panem-activity-log { display: grid; gap: 18px; }
+.panem-activity-day { overflow: hidden; border: 1px solid var(--panem-line); background: var(--panem-1); box-shadow: var(--panem-shadow); }
+.panem-activity-date { display: grid; min-height: 58px; grid-template-columns: 43px minmax(0, 1fr) max-content; align-items: center; gap: 11px; padding: 7px 16px 7px 8px; border-bottom: 1px solid var(--panem-line); background: var(--panem-text); color: var(--panem-1); box-sizing: border-box; }
+.panem-activity-date > i { display: grid; width: 43px; height: 43px; place-items: center; background: var(--panem-red); color: var(--panem-on-accent); font-size: 18px; }
+.panem-activity-date h2 { margin: 0; font: italic 800 19px/1 var(--panem-font-title); text-transform: uppercase; }
+.panem-activity-date > span { font: 700 13px/1 var(--panem-font-title); letter-spacing: .1em; opacity: .6; text-transform: uppercase; }
+
+.panem-activity-feed { display: block; margin: 0; padding: 0; list-style: none; }
+.panem-activity-item { position: relative; display: grid; min-height: 98px; grid-template-columns: 76px minmax(0, 1fr) 115px; align-items: stretch; margin: 0; padding: 0; border: 0; border-bottom: 1px solid var(--panem-line); background: var(--panem-1); }
+.panem-activity-item:last-child { border-bottom: 0; }
+.panem-activity-avatar { display: block; width: auto; height: auto; border-right: 1px solid var(--panem-line); background-color: var(--panem-2); background-image: var(--activity-image); background-position: center; background-size: cover; }
+.panem-activity-copy { align-self: center; min-width: 0; padding: 17px 22px; }
+.panem-activity-kicker { display: block; margin-bottom: 8px; color: var(--panem-red); font: 700 13px/1 var(--panem-font-title); letter-spacing: .1em; text-transform: uppercase; }
+.panem-activity-copy .text { min-width: 0; color: var(--panem-text); font-size: 13px; line-height: 1.55; }
+.panem-activity-copy .text a { color: var(--panem-text); font-weight: 700; }
+.panem-activity-copy .text a:hover { color: var(--panem-red); }
+.panem-activity-time { display: flex; align-items: center; justify-content: center; gap: 7px; padding: 12px; border-left: 1px solid var(--panem-line); background: var(--panem-2); color: var(--panem-muted); font: 700 13px/1 var(--panem-font-title); text-align: center; text-transform: uppercase; }
+.panem-activity-time > i { color: var(--panem-red); font-size: 16px; }
+.panem-activity-end { display: flex; min-height: 54px; align-items: center; justify-content: center; gap: 8px; margin-top: 18px; border: 1px solid var(--panem-line); background: var(--panem-2); color: var(--panem-muted); font: 700 13px/1 var(--panem-font-title); text-transform: uppercase; }
+.panem-activity-end > i { color: var(--panem-red); font-size: 18px; }
+.panem-discover-empty { display: grid; min-height: 220px; place-items: center; align-content: center; gap: 12px; border: 1px solid var(--panem-line); background: var(--panem-1); color: var(--panem-muted); box-shadow: var(--panem-shadow); }
+.panem-discover-empty > i { color: var(--panem-red); font-size: 30px; }
+.panem-discover-empty p { margin: 0; font-size: 13px; }
+
+/* 08. AFFICHAGE D'UN FORUM ----------------------------------------- */
 
 .panem-forum-view-hero {
   position: relative;
@@ -747,7 +792,7 @@ img { max-width: 100%; }
 .panem-forum-users > i { color: var(--panem-red); font-size: 19px; }
 .panem-forum-actions-bottom { margin-top: 14px; }
 
-/* 08. PROFIL D'UN MEMBRE ------------------------------------------- */
+/* 09. PROFIL D'UN MEMBRE ------------------------------------------- */
 
 .panem-profile-view {
   --profile-accent: var(--panem-red);
@@ -805,7 +850,7 @@ img { max-width: 100%; }
 .panem-profile-view .ajax-profil_edit img,
 .panem-profile-view .ajax-profil_valid { width: 16px; height: 16px; object-fit: contain; }
 
-/* 09. LISTE DES MEMBRES -------------------------------------------- */
+/* 10. LISTE DES MEMBRES -------------------------------------------- */
 
 .panem-memberlist-hero {
   position: relative;
@@ -860,7 +905,7 @@ img { max-width: 100%; }
 .panem-member-contact img { max-width: 18px; max-height: 18px; object-fit: contain; }
 .panem-member-pagination { display: flex; justify-content: center; margin: 24px 0 0; }
 
-/* 10. SUJETS ET MESSAGES ------------------------------------------- */
+/* 11. SUJETS ET MESSAGES ------------------------------------------- */
 
 .panem-topic-hero {
   position: relative;

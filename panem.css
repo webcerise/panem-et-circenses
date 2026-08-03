@@ -701,7 +701,8 @@ img { max-width: 100%; }
 .panem-activity-avatar { display: block; width: auto; height: auto; border-right: 1px solid var(--panem-line); background-color: var(--panem-2); background-image: var(--activity-image); background-position: center; background-size: cover; }
 .panem-activity-copy { align-self: center; min-width: 0; padding: 17px 22px; }
 .panem-activity-kicker { display: block; margin-bottom: 8px; color: var(--panem-red); font: 700 13px/1 var(--panem-font-title); letter-spacing: .1em; text-transform: uppercase; }
-.panem-activity-copy .text { min-width: 0; color: var(--panem-text); font-size: 13px; line-height: 1.55; }
+img.act-icon { display: none; }
+.panem-activity-copy .text { min-width: 0; color: var(--panem-text); font-size: 13px; line-height: 1.55; text-transform: lowercase; }
 .panem-activity-copy .text a { color: var(--panem-text); font-weight: 700; }
 .panem-activity-copy .text a:hover { color: var(--panem-red); }
 .panem-activity-time { display: flex; align-items: center; justify-content: center; gap: 7px; padding: 12px; border-left: 1px solid var(--panem-line); background: var(--panem-2); color: var(--panem-muted); font: 700 13px/1 var(--panem-font-title); text-align: center; text-transform: uppercase; }

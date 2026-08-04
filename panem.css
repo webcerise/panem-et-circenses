@@ -1202,7 +1202,8 @@ img.act-icon { display: none; }
 .panem-simple-title iconify-icon { width: 38px; height: 38px; flex: 0 0 38px; color: var(--panem-red); font-size: 38px; }
 .panem-simple-title h1 { margin: 0; color: var(--panem-text); font: italic 900 31px/1 var(--panem-font-title); letter-spacing: -1px; text-transform: uppercase; }
 .panem-simple-text { padding: 28px; font: 500 13px/1.7 var(--panem-font-text); white-space: pre-line; }
-.panem-simple-text t1 { display: block; margin: 24px 0 7px; color: var(--panem-red); font: italic 800 18px/1 var(--panem-font-title); text-transform: uppercase; }
+t1 { display: block; margin: 24px 0 7px; color: var(--panem-red); font: italic 800 18px/1 var(--panem-font-title); text-transform: uppercase; }
 .panem-simple-text t1:first-child { margin-top: 0; }
-.panem-simple-text i1 { display: block; margin: 0 0 15px; padding-left: 14px; border-left: 4px solid var(--panem-red); color: var(--panem-muted); font-style: italic; }
+i1 { display: block; margin: 0 0 15px; padding-left: 14px; border-left: 4px solid var(--panem-red); color: var(--panem-muted); font-style: italic; }
+b1 { color: var(--panem-red); font-weight: 800; }
 .panem-simple-text i1:last-child { margin: 24px 0 0; }

@@ -810,7 +810,7 @@ img.act-icon { display: none; }
   box-sizing: border-box;
 }
 
-.panem-profile-view-aside { display: grid; min-width: 0; height: 436px; grid-template-rows: 322px 58px 56px; border-right: 1px solid var(--panem-line); background: var(--panem-2); }
+.panem-profile-view-aside { display: grid; min-width: 0; height: 436px; border-right: 1px solid var(--panem-line); background: var(--panem-2); }
 .panem-profile-view-avatar { display: grid; place-items: center; overflow: hidden; border-bottom: 1px solid var(--panem-line); background: var(--panem-1); }
 .panem-profile-view-avatar img { display: block; width: 202px; height: 322px; border-right: 1px solid var(--panem-line); border-left: 1px solid var(--panem-line); object-fit: cover; box-sizing: border-box; }
 .panem-profile-view-rank { display: flex; min-width: 0; flex-direction: column; justify-content: center; padding: 9px 17px; overflow: hidden; border-bottom: 1px solid var(--panem-line); background: var(--profile-accent); box-sizing: border-box; height: fit-content; }

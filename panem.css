@@ -217,7 +217,19 @@ img { max-width: 100%; }
 .panem-pa-context::after { content: "74"; position: absolute; right: 20px; bottom: -11px; color: var(--panem-red); font: italic 800 112px/.8 var(--panem-font-title); letter-spacing: -9px; opacity: .05; }
 .panem-pa-kicker { position: relative; z-index: 1; color: var(--panem-red); font: 700 13px/1 var(--panem-font-title); letter-spacing: .12em; text-transform: uppercase; }
 .panem-pa-context h1 { position: relative; z-index: 1; max-width: 520px; margin: 12px 0 11px; color: var(--panem-text); font: italic 800 30px/.98 var(--panem-font-title); letter-spacing: -1.4px; text-align: left; text-transform: uppercase; }
-.panem-pa-context p { position: relative; z-index: 1; max-height: 78px; margin: 0; padding-right: 8px; overflow: auto; color: var(--panem-muted); font-size: 13px; line-height: 1.5; }
+.panem-pa-context p {
+  position: relative;
+  z-index: 1;
+  max-height: 78px;
+  margin: 0;
+  padding-right: 8px;
+  overflow: auto;
+  color: var(--panem-muted);
+  font-size: 13px;
+  line-height: 1.5;
+  text-transform: lowercase;
+  text-wrap-style: balance;
+}
 .panem-pa-context > a { position: relative; z-index: 1; display: inline-flex; align-items: center; gap: 8px; margin-top: 16px; padding-bottom: 5px; border-bottom: 2px solid var(--panem-red); color: var(--panem-text); font: 700 13px/1 var(--panem-font-title); text-transform: uppercase; }
 
 .panem-pa-period {
@@ -251,7 +263,11 @@ img { max-width: 100%; }
 .panem-pa-news-list a { display: grid; grid-template-columns: 67px minmax(0, 1fr); min-height: 45px; align-items: center; border: 1px solid var(--panem-line); background: var(--panem-1); color: var(--panem-text); }
 .panem-pa-news-list time { align-self: stretch; display: grid; place-items: center; align-content: center; border-right: 1px solid var(--panem-line); color: var(--panem-muted); font: 700 13px/1 var(--panem-font-title); }
 .panem-pa-news-list time b { color: var(--panem-red); font-size: 17px; }
-.panem-pa-news-list span { padding: 9px 11px; font: 700 13px/1.2 var(--panem-font-title); }
+.panem-pa-news-list span {
+  padding: 9px 11px;
+  font: 700 13px / 1.2 var(--panem-font-title);
+  text-transform: lowercase;
+}
 .panem-pa-news-list a:hover { border-color: var(--panem-red); }
 
 .panem-pa-event-copy { display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 15px; min-height: 145px; align-items: center; padding: 15px; border: 1px solid var(--panem-line); background: var(--panem-1); }
@@ -262,20 +278,42 @@ img { max-width: 100%; }
   color: var(--panem-red);
 }
 .panem-pa-event-copy strong { color: var(--panem-text); font: 800 15px/1.1 var(--panem-font-title); text-transform: uppercase; }
-.panem-pa-event-copy p { margin: 7px 0; color: var(--panem-muted); font-size: 13px; line-height: 1.4; }
+.panem-pa-event-copy p {
+  margin: 7px 0;
+  color: var(--panem-muted);
+  font-size: 13px;
+  line-height: 1.4;
+  text-transform: lowercase;
+}
 .panem-pa-event-copy a { display: inline-flex; align-items: center; gap: 6px; color: var(--panem-red); font: 700 13px/1 var(--panem-font-title); text-transform: uppercase; }
 
 .panem-pa-staff-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(72px, 1fr)); gap: 8px; }
 .panem-pa-staff-card { display: flex; min-width: 0; min-height: 145px; flex-direction: column; align-items: center; justify-content: center; padding: 10px 6px; border: 1px solid var(--panem-line); background: var(--panem-1); color: var(--panem-text); text-align: center; }
-.panem-pa-staff-card > span { display: grid; width: 52px; height: 52px; margin-bottom: 11px; place-items: center; background: var(--panem-2); box-shadow: inset 0 -4px var(--panem-red); color: var(--panem-red); font-size: 21px; }
+.panem-pa-staff-card > span {
+  display: grid;
+  width: 52px;
+  height: 52px;
+  margin-bottom: 11px;
+  place-items: center;
+  background: var(--panem-2);
+  box-shadow: inset 0 -4px var(--panem-red);
+  color: var(--panem-red);
+  font-size: 21px;
+  border-bottom: solid 4px var(--accentClr);
+}
 .panem-pa-staff-card > span img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-bottom: solid 4px var(--accentClr);
+  filter: grayscale(1) contrast(1.5) !important;
 }
 .panem-pa-staff-card b { max-width: 100%; overflow: hidden; font: 800 13px/1 var(--panem-font-title); text-overflow: ellipsis; text-transform: uppercase; white-space: nowrap; }
-.panem-pa-staff-card small { margin-top: 6px; color: var(--panem-muted); font-size: 13px; }
+.panem-pa-staff-card small {
+  margin-top: 6px;
+  color: var(--panem-muted);
+  font-size: 13px;
+  text-transform: lowercase;
+}
 .panem-pa-staff-card:hover { border-color: var(--panem-red); color: var(--panem-red); }
 
 .panem-pa-shortcuts { display: flex; min-height: 62px; flex-wrap: wrap; border-top: 1px solid var(--panem-line); background: var(--panem-1); }

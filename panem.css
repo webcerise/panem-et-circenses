@@ -1218,11 +1218,11 @@ b1 { color: var(--panem-red); font-weight: 800; }
   --truesight-font: 500 13px/1.45 var(--panem-font-text);
   --truesight-color: var(--panem-text);
   --truesight-head-font: italic 800 15px/1 var(--panem-font-title);
-  --truesight-head-font-tt: uppercase;
+  --truesight-head-font-tt: lowercase;
   --truesight-head-color: var(--panem-red);
   --truesight-normal-color: var(--panem-text);
   --truesight-normal-font: 700 13px/1.35 var(--panem-font-text);
-  --truesight-normal-tt: none;
+  --truesight-normal-tt: lowercase;
   --truesight-img-max-w: 62px;
   --truesight-icon-size: 38px;
   --truesight-icon-color: var(--panem-red);
@@ -1232,6 +1232,8 @@ b1 { color: var(--panem-red); font-weight: 800; }
   box-shadow: var(--panem-shadow);
 }
 #truesight .ts-image img { width: 62px; height: 62px; object-fit: cover; filter: grayscale(1); }
+#truesight .ts-head,
+#truesight .ts-text { text-transform: lowercase; }
 #truesight .ts-text { color: var(--panem-text); }
 #truesight.important .ts-head,
 #truesight.important .ts-text,

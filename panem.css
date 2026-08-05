@@ -1245,6 +1245,46 @@ t1 { display: block; margin: 24px 0 7px; color: var(--panem-red); font: italic 8
 i1 { display: block; margin: 0 0 15px; padding-left: 14px; border-left: 4px solid var(--panem-red); color: var(--panem-muted); font-style: italic; }
 b1 { color: var(--panem-red); font-weight: 800; }
 
+/* FICHE DE PRÉSENTATION -------------------------------------------------- */
+.panem-character-sheet { width: 100%; max-width: 760px; margin: 10px auto; overflow: hidden; border: 1px solid var(--panem-line); background: var(--panem-1); color: var(--panem-text); }
+.panem-character-head { position: relative; display: grid; min-height: 126px; grid-template-columns: minmax(0, 1fr) auto; align-items: end; gap: 22px; padding: 24px 28px; overflow: hidden; border-bottom: 7px solid var(--panem-red); background: var(--panem-2); box-sizing: border-box; }
+.panem-character-head > iconify-icon { position: absolute; top: 50%; right: 18px; width: 150px; height: 150px; color: color-mix(in srgb, var(--panem-red) 13%, transparent); font-size: 150px; transform: translateY(-50%) rotate(-10deg); }
+.panem-character-title { position: relative; z-index: 1; min-width: 0; }
+.panem-character-title small { display: block; margin-bottom: 8px; color: var(--panem-red); font: 800 13px/1 var(--panem-font-title); letter-spacing: .12em; text-transform: uppercase; }
+.panem-character-title h1 {
+  margin: 0;
+  color: var(--panem-text);
+  font: italic 900 37px / .9 var(--panem-font-title);
+  letter-spacing: -2px;
+  text-transform: uppercase;
+  text-align: left;
+}
+.panem-character-head-meta { position: relative; z-index: 1; display: flex; align-items: center; gap: 7px; padding-bottom: 2px; }
+.panem-character-head-meta span { padding: 7px 9px; border: 1px solid var(--panem-line); background: var(--panem-1); color: var(--panem-muted); font: 800 13px/1 var(--panem-font-title); text-transform: lowercase; }
+.panem-character-overview { display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: 20px; padding: 20px; border-bottom: 1px solid var(--panem-line); background: var(--panem-2); }
+.panem-character-portrait { margin: 0; padding: 8px; border: 1px solid var(--panem-line); background: var(--panem-1); }
+.panem-character-portrait img { display: block; width: 242px; height: 387px; object-fit: cover; }
+.panem-character-record { display: grid; min-width: 0; height: 405px; grid-template-rows: auto minmax(0, 1fr); }
+.panem-character-quote { position: relative; padding: 16px 20px 16px 46px; border-bottom: 1px solid var(--panem-line); color: var(--panem-muted); font: italic 700 14px/1.5 var(--panem-font-text); }
+.panem-character-quote::before { content: "“"; position: absolute; top: 8px; left: 13px; color: var(--panem-red); font: italic 900 45px/1 var(--panem-font-title); }
+.panem-character-identity { min-width: 0; min-height: 0; padding: 19px 21px; overflow: auto; background: var(--panem-1); font-size: 13px; line-height: 1.75; text-align: justify; white-space: pre-line; box-sizing: border-box; }
+.panem-character-identity b1,
+.panem-character-copy b1,
+.panem-character-player b1 { font: italic 800 13px/1 var(--panem-font-title); text-transform: uppercase; }
+.panem-character-section { padding: 25px 28px 29px; border-bottom: 1px solid var(--panem-line); }
+.panem-character-section-title { display: grid; grid-template-columns: auto minmax(30px, 1fr) auto; align-items: center; gap: 11px; margin-bottom: 18px; }
+.panem-character-section-title h2 { grid-column: 1; grid-row: 1; margin: 0; color: var(--panem-red); font: italic 900 19px/1 var(--panem-font-title); letter-spacing: -.5px; text-transform: uppercase; }
+.panem-character-section-title::after { content: ""; grid-column: 2; grid-row: 1; height: 1px; background: var(--panem-line); }
+.panem-character-section-title iconify-icon { grid-column: 3; grid-row: 1; width: 23px; height: 23px; color: var(--panem-red); font-size: 23px; }
+.panem-character-copy { font-size: 13px; line-height: 1.8; text-align: justify; white-space: pre-line; }
+.panem-character-copy:empty::before { content: "écrire ici."; color: var(--panem-muted); font-style: italic; }
+.panem-character-relations { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-bottom: 1px solid var(--panem-line); }
+.panem-character-relations .panem-character-section { border-bottom: 0; }
+.panem-character-relations .panem-character-section:first-child { border-right: 1px solid var(--panem-line); }
+.panem-character-player-wrap { padding: 24px 28px 28px; background: var(--panem-2); }
+.panem-character-player { padding: 17px 19px; border: 1px solid var(--panem-line); background: var(--panem-1); font-size: 13px; line-height: 1.75; white-space: pre-line; }
+.panem-character-credits { padding: 12px 20px; border-top: 1px solid var(--panem-line); color: var(--panem-muted); font-size: 13px; text-align: right; }
+
 /* TRUESIGHT --------------------------------------------------------------- */
 #truesight {
   --truesight: var(--panem-1);

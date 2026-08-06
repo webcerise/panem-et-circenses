@@ -207,7 +207,13 @@ img { max-width: 100%; }
   background: var(--panem-2);
 }
 
-.panem-pa-visual img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.1); }
+.panem-pa-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(1) contrast(1.5) !important;
+  opacity: 0.5;
+}
 .panem-pa-visual::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgb(10 12 16 / 80%), transparent 58%); pointer-events: none; }
 .panem-pa-visual figcaption { position: absolute; right: 18px; bottom: 17px; left: 18px; z-index: 1; color: #fff; }
 .panem-pa-visual small { display: block; margin-bottom: 7px; font: 700 13px/1 var(--panem-font-title); letter-spacing: .08em; text-transform: uppercase; }
@@ -399,7 +405,18 @@ img { max-width: 100%; }
 .panem-forum-heading::after { content: counter(panem-forum, decimal-leading-zero); position: absolute; right: 15px; bottom: -19px; color: var(--panem-red); font: italic 800 72px/.8 var(--panem-font-title); letter-spacing: -6px; opacity: .05; }
 .panem-forum-number { display: block; margin-bottom: 3px; color: var(--panem-blue); font: 700 13px/1 var(--panem-font-title); letter-spacing: .1em; text-transform: uppercase; }
 .panem-forum-number::before { content: "Secteur " counter(panem-category) "." counter(panem-forum, decimal-leading-zero); }
-.forumtitle { position: relative; z-index: 1; display: block; max-width: 510px; overflow: hidden; color: var(--panem-text); font: 800 20px/1 var(--panem-font-title); letter-spacing: -.8px; text-overflow: ellipsis; text-transform: uppercase; white-space: nowrap; }
+.forumtitle {
+  position: relative;
+  z-index: 1;
+  display: block;
+  max-width: 510px;
+  color: var(--panem-text);
+  font: 800 20px / 1 var(--panem-font-title);
+  letter-spacing: -.8px;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
 
 .panem-forum-description { grid-column: 1; grid-row: 2; max-height: 62px; margin: 9px 18px 8px 59px; padding-right: 12px; overflow: auto; color: var(--panem-muted); font-size: 13px; line-height: 1.45; }
 
@@ -1284,6 +1301,38 @@ b1 { color: var(--panem-red); font-weight: 800; }
 .panem-character-player-wrap { padding: 24px 28px 28px; background: var(--panem-2); }
 .panem-character-player { padding: 17px 19px; border: 1px solid var(--panem-line); background: var(--panem-1); font-size: 13px; line-height: 1.75; white-space: pre-line; }
 .panem-character-credits { padding: 12px 20px; border-top: 1px solid var(--panem-line); color: var(--panem-muted); font-size: 13px; text-align: right; }
+
+/* BOTTIN DES VAINQUEURS ------------------------------------------------- */
+.panem-victors { padding: 24px; }
+.panem-victors-note { margin-bottom: 22px; padding: 15px 17px; border-left: 5px solid var(--panem-red); background: var(--panem-2); color: var(--panem-muted); font-size: 13px; line-height: 1.6; }
+.panem-victors h2 { margin: 26px 0 10px; color: var(--panem-red); font: italic 900 19px / 1 var(--panem-font-title); text-transform: uppercase; }
+.panem-victors h2:first-of-type { margin-top: 0; }
+.panem-victor-head,
+.panem-victor-row {
+  display: grid;
+  grid-template-columns: 34px 78px 61px 129px 99px minmax(0, 1fr);
+  align-items: center;
+}
+.panem-victor-head { border: 1px solid var(--panem-line); background: var(--panem-text); color: var(--panem-1); font: 800 13px / 1 var(--panem-font-title); text-transform: uppercase; }
+.panem-victor-head span,
+.panem-victor-row > * {
+  min-width: fit-content;
+  padding: 10px 9px;
+  border-right: 1px solid var(--panem-line);
+  box-sizing: border-box;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.panem-victor-head span:last-child,
+.panem-victor-row > *:last-child { border-right: 0; }
+.panem-victor-row { min-height: 39px; border: 1px solid var(--panem-line); border-top: 0; background: var(--panem-1); font-size: 13px; }
+.panem-victor-row:nth-child(odd) { background: var(--panem-2); }
+.panem-victor-row > b { color: var(--panem-red); font: italic 900 15px / 1 var(--panem-font-title); }
+.panem-victor-row > strong { overflow: hidden; font: 800 13px / 1.2 var(--panem-font-title); text-overflow: ellipsis; text-transform: uppercase; white-space: nowrap; }
+.panem-victor-row.is-dead { color: var(--panem-muted); opacity: .68; }
+.panem-victor-row.is-free > strong { color: var(--panem-red); }
+.panem-victor-row.is-taken > strong { align-self: stretch; display: flex; align-items: center; background: var(--panem-red); color: var(--panem-on-accent); }
 
 /* TRUESIGHT --------------------------------------------------------------- */
 #truesight {

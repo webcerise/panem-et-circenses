@@ -1414,6 +1414,8 @@ b1 { color: var(--panem-red); font-weight: 800; }
 .panem-family-details figure { width: 218px; margin: 0; padding: 8px; border-right: 1px solid var(--panem-line); background: var(--panem-1); }
 .panem-family-details img { display: block; width: 200px; height: 320px; object-fit: cover; filter: grayscale(1) contrast(1.08); }
 .panem-family-details article > div { align-self: center; min-width: 0; padding: 27px; }
+.panem-family-details article > div::before { content: "personnage libre"; display: inline-block; margin-bottom: 13px; padding: 7px 9px; border: 1px solid currentColor; color: var(--panem-red); font: 800 13px/1 var(--panem-font-title); letter-spacing: .08em; text-transform: uppercase; }
+.panem-family-details article.is-taken > div::before { content: "personnage pris"; background: var(--panem-red); color: var(--panem-on-accent); }
 .panem-family-details article small { color: var(--panem-red); font: 800 13px/1 var(--panem-font-title); letter-spacing: .1em; text-transform: uppercase; }
 .panem-family-details h2 { margin: 9px 0 8px; color: var(--panem-text); font: italic 900 32px/.9 var(--panem-font-title); letter-spacing: -1.5px; text-transform: uppercase; }
 .panem-family-meta { margin: 0 0 22px !important; color: var(--panem-muted) !important; font: 800 13px/1 var(--panem-font-title); text-transform: uppercase; }

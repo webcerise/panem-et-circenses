@@ -1414,13 +1414,16 @@ b1 { color: var(--panem-red); font-weight: 800; }
 .panem-family-details figure { width: 218px; margin: 0; padding: 8px; border-right: 1px solid var(--panem-line); background: var(--panem-1); }
 .panem-family-details img { display: block; width: 200px; height: 320px; object-fit: cover; filter: grayscale(1) contrast(1.08); }
 .panem-family-details article > div { align-self: center; min-width: 0; padding: 27px; }
-.panem-family-details article > div::before { content: "personnage libre"; display: inline-block; margin-bottom: 13px; padding: 7px 9px; border: 1px solid currentColor; color: var(--panem-red); font: 800 13px/1 var(--panem-font-title); letter-spacing: .08em; text-transform: uppercase; }
-.panem-family-details article.is-taken > div::before { content: "personnage pris"; background: var(--panem-red); color: var(--panem-on-accent); }
 .panem-family-details article small { color: var(--panem-red); font: 800 13px/1 var(--panem-font-title); letter-spacing: .1em; text-transform: uppercase; }
+.panem-family-details article small { font-size: 0; }
+.panem-family-details article small::after { content: "libre"; font: 800 13px/1 var(--panem-font-title); }
+.panem-family-details article.is-taken small::after { content: "pris"; }
+.panem-family-details article[data-panel="remus"] small::after { content: "pris"; }
 .panem-family-details h2 { margin: 9px 0 8px; color: var(--panem-text); font: italic 900 32px/.9 var(--panem-font-title); letter-spacing: -1.5px; text-transform: uppercase; }
 .panem-family-meta { margin: 0 0 22px !important; color: var(--panem-muted) !important; font: 800 13px/1 var(--panem-font-title); text-transform: uppercase; }
 .panem-family-meta b { padding: 0 5px; color: var(--panem-red); }
 .panem-family-details article > div > p:last-child { margin: 0; color: var(--panem-text); font-size: 13px; line-height: 1.7; text-align: justify; text-transform: lowercase; }
+.panem-family-details .panem-family-credit { margin: 18px 0 0 !important; padding-top: 10px; border-top: 1px solid var(--panem-line); color: var(--panem-muted) !important; font: 700 13px/1 var(--panem-font-title); text-align: right !important; text-transform: lowercase; }
 #astor-drusilla:checked ~ .panem-family-tree-scroll label[for="astor-drusilla"] > i,
 #astor-lucan:checked ~ .panem-family-tree-scroll label[for="astor-lucan"] > i,
 #astor-lavinia:checked ~ .panem-family-tree-scroll label[for="astor-lavinia"] > i,
@@ -1430,7 +1433,10 @@ b1 { color: var(--panem-red); font-weight: 800; }
 #astor-elara:checked ~ .panem-family-tree-scroll label[for="astor-elara"] > i,
 #astor-corvin:checked ~ .panem-family-tree-scroll label[for="astor-corvin"] > i,
 #astor-hadrian:checked ~ .panem-family-tree-scroll label[for="astor-hadrian"] > i,
-#astor-leander:checked ~ .panem-family-tree-scroll label[for="astor-leander"] > i { background: var(--panem-text); box-shadow: 0 0 0 5px color-mix(in srgb, var(--panem-red) 22%, transparent); transform: scale(1.12); }
+#astor-leander:checked ~ .panem-family-tree-scroll label[for="astor-leander"] > i,
+#astor-marcellus:checked ~ .panem-family-tree-scroll label[for="astor-marcellus"] > i,
+#astor-titus:checked ~ .panem-family-tree-scroll label[for="astor-titus"] > i,
+#astor-sabina:checked ~ .panem-family-tree-scroll label[for="astor-sabina"] > i { background: var(--panem-text); box-shadow: 0 0 0 5px color-mix(in srgb, var(--panem-red) 22%, transparent); transform: scale(1.12); }
 #astor-drusilla:checked ~ .panem-family-details [data-panel="drusilla"],
 #astor-lucan:checked ~ .panem-family-details [data-panel="lucan"],
 #astor-lavinia:checked ~ .panem-family-details [data-panel="lavinia"],
@@ -1440,4 +1446,7 @@ b1 { color: var(--panem-red); font-weight: 800; }
 #astor-elara:checked ~ .panem-family-details [data-panel="elara"],
 #astor-corvin:checked ~ .panem-family-details [data-panel="corvin"],
 #astor-hadrian:checked ~ .panem-family-details [data-panel="hadrian"],
-#astor-leander:checked ~ .panem-family-details [data-panel="leander"] { display: grid; }
+#astor-leander:checked ~ .panem-family-details [data-panel="leander"],
+#astor-marcellus:checked ~ .panem-family-details [data-panel="marcellus"],
+#astor-titus:checked ~ .panem-family-details [data-panel="titus"],
+#astor-sabina:checked ~ .panem-family-details [data-panel="sabina"] { display: grid; }

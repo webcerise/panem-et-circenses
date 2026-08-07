@@ -1450,3 +1450,24 @@ b1 { color: var(--panem-red); font-weight: 800; }
 #astor-marcellus:checked ~ .panem-family-details [data-panel="marcellus"],
 #astor-titus:checked ~ .panem-family-details [data-panel="titus"],
 #astor-sabina:checked ~ .panem-family-details [data-panel="sabina"] { display: grid; }
+
+#stuyvesant-iphigenia:checked ~ .panem-family-tree-scroll label[for="stuyvesant-iphigenia"] > i,
+#stuyvesant-cassian:checked ~ .panem-family-tree-scroll label[for="stuyvesant-cassian"] > i,
+#stuyvesant-nicander:checked ~ .panem-family-tree-scroll label[for="stuyvesant-nicander"] > i,
+#stuyvesant-lysander:checked ~ .panem-family-tree-scroll label[for="stuyvesant-lysander"] > i,
+#stuyvesant-junia:checked ~ .panem-family-tree-scroll label[for="stuyvesant-junia"] > i,
+#stuyvesant-aurelian:checked ~ .panem-family-tree-scroll label[for="stuyvesant-aurelian"] > i,
+#stuyvesant-cadmus:checked ~ .panem-family-tree-scroll label[for="stuyvesant-cadmus"] > i,
+#stuyvesant-theron:checked ~ .panem-family-tree-scroll label[for="stuyvesant-theron"] > i,
+#stuyvesant-cressida:checked ~ .panem-family-tree-scroll label[for="stuyvesant-cressida"] > i,
+#stuyvesant-hestia:checked ~ .panem-family-tree-scroll label[for="stuyvesant-hestia"] > i { background: var(--panem-text); box-shadow: inset 0 0 0 5px var(--panem-red); }
+#stuyvesant-iphigenia:checked ~ .panem-family-details [data-panel="iphigenia"],
+#stuyvesant-cassian:checked ~ .panem-family-details [data-panel="cassian"],
+#stuyvesant-nicander:checked ~ .panem-family-details [data-panel="nicander"],
+#stuyvesant-lysander:checked ~ .panem-family-details [data-panel="lysander"],
+#stuyvesant-junia:checked ~ .panem-family-details [data-panel="junia"],
+#stuyvesant-aurelian:checked ~ .panem-family-details [data-panel="aurelian"],
+#stuyvesant-cadmus:checked ~ .panem-family-details [data-panel="cadmus"],
+#stuyvesant-theron:checked ~ .panem-family-details [data-panel="theron"],
+#stuyvesant-cressida:checked ~ .panem-family-details [data-panel="cressida"],
+#stuyvesant-hestia:checked ~ .panem-family-details [data-panel="hestia"] { display: grid; }
